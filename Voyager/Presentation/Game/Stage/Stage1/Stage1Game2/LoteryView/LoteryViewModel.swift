@@ -17,7 +17,6 @@ final class LoteryViewModel: ObservableObject {
         _gameStatus = .result
     }
     
-    
     enum GameStatus {
         case game
         case result

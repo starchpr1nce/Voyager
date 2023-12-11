@@ -1,19 +1,14 @@
 
 import SwiftUI
 
-
-
 struct SRPView: View {
     
     @EnvironmentObject var sprViewModel: SPRViewModel
-    
-    
     let myChoise = ["myP", "myR", "myS"]
     let enemyChoise = ["enP", "enR", "enS"]
     let wid = UIScreen.main.bounds.width * 0.4
     
     @ViewBuilder private func hands(leftHand: String, rightHand: String) -> some View {
-        
         VStack  {
             HStack {
                 Image(leftHand)
@@ -25,27 +20,12 @@ struct SRPView: View {
                 Image(rightHand)
                     .resizable()
                     .frame(width: wid, height: wid)
-                
             }
-            
-        } .padding(.bottom, 60)
-    }
-    
-    @ViewBuilder var gameBack: some View {
-        ZStack {
-            VStack(spacing: 0) {
-                Spacer()
-                Rectangle()
-                    .frame(height: 5)
-                Rectangle()
-                    .foregroundStyle(Color(red: 0.13, green: 0.14, blue: 0.19))
-                    .frame(height: UIScreen.main.bounds.height * 0.4)
-            }
-        }.ignoresSafeArea()
+        } 
+        .padding(.bottom, 60)
     }
     
     var body: some View {
-        
         VStack{
             switch sprViewModel._gameStatus {
             case .initial:
@@ -58,8 +38,6 @@ struct SRPView: View {
                 endGameView()
             }
         }
-        
-        
     }
     
     @ViewBuilder private func initialView() -> some View {
@@ -78,15 +56,12 @@ struct SRPView: View {
                 RPSMainButtonView(text: "Бумага") {
                     sprViewModel.playGame(with: .paper)
                 }
-                
             }
-            
             .padding(.bottom, 60)
-            
-        } .background {
-            gameBack
         }
+        .miniGameBackground()
     }
+    
     @ViewBuilder private func animatingView() -> some View {
         VStack {
             Spacer()
@@ -104,28 +79,22 @@ struct SRPView: View {
                     }
                 }
             }
-            
-            
-            
         } 
-//        .frame(maxWidth: .infinity)
-            .background {
-                gameBack
-            }
+        .miniGameBackground()
     }
     
     
     
     
     @ViewBuilder private func resultView() -> some View {
-        
-        
         VStack {
-            
             Spacer()
+            
             hands(leftHand: sprViewModel.playerChoice?.rawValue ?? "", rightHand: sprViewModel.computerChoice.rawValue)
+            
             RPSGameTextView(text: sprViewModel.gameOutcome, color: .indigo)
                 .padding(.bottom, 16)
+            
             HStack {
                 Text("Победы: \(sprViewModel.wins)")
                 Spacer()
@@ -133,16 +102,15 @@ struct SRPView: View {
             }
             .gameButtonStyle(.textBack)
             .padding(.bottom, 16)
+            
             RPSMainButtonView(text: "Ещё разок") {
                 sprViewModel.setInitial()
-            }.padding(.bottom, 32)
+            }
+            .padding(.bottom, 32)
             
         } 
         .frame(maxWidth: .infinity)
-            .background {
-                
-                gameBack
-            }
+        .miniGameBackground()
         
     }
     
@@ -163,20 +131,20 @@ struct SRPView: View {
             
             RPSMainButtonView(text: "Дальше") {
                 
-            }.padding(.bottom, 52)
-        } 
-//        .frame(maxWidth: .infinity)
-            .background {
-                gameBack
             }
+            .padding(.bottom, 52)
+        }
+        .frame(maxWidth: .infinity)
+        .miniGameBackground()
         
     }
 }
 
 
-//#Preview {
-//    let d = SRPView().environmentObject(SPRViewModel())
-//}
+#Preview {
+    SRPView()
+        .environmentObject(SPRViewModel())
+}
 
 struct RPSMainButtonView: View {
     let text: String

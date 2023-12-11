@@ -42,19 +42,13 @@ struct Stage1Game3View: View {
                         stage1ViewModel.character = PhraseType.students.imageName
                     }
             }
-        }      
+        }
         .onChange(of: stage1Game3ViewModel.state) { _ in
             stage1ViewModel.setBackImages(
                 background: "back",
                 character: stage1Game3ViewModel.phraseSource.type.imageName
             )
         }
-//        .onAppear {
-//            stage1ViewModel.setBackImages(
-//                background: "back",
-//                character: stage1Game3ViewModel.phraseSource.type.imageName
-//            )
-//        }
     }
     
     @ViewBuilder private func stageView(nextState: @escaping () -> Void) -> some View {
@@ -74,26 +68,22 @@ struct Stage1Game3View: View {
                 nextState()
             }, label: {
                 Text("Дальше")
-                    .padding(12)
-                    .foregroundStyle(.white)
+                    .gameButtonStyle(.nextButton)
                     .opacity(stage1Game3ViewModel.printingFinished ? 0.3 : 1.0)
-                    .font(.system(size: 18).monospaced().weight(.bold))
-                    .frame(width: UIScreen.main.bounds.width * 0.9)
-                    .background(Color(.nextButton))
-                    .border(Color.black, width: 2)
             })
             .disabled(stage1Game3ViewModel.printingFinished)
             .padding(.bottom)
-            
-            
-        }.frame(minWidth: 0, maxWidth: .infinity, minHeight: 0, maxHeight: .infinity, alignment: .bottom)
-            .onAppear {
-                stage1Game3ViewModel.printingFinished.toggle()
-                Task {
-                    try await writeTextBySymbols()
-                }
-                
+        }
+        
+        
+        .frame(minWidth: 0, maxWidth: .infinity, minHeight: 0, maxHeight: .infinity, alignment: .bottom)
+        .onAppear {
+            stage1Game3ViewModel.printingFinished.toggle()
+            Task {
+                try await writeTextBySymbols()
             }
+            
+        }
     }
     
     func writeTextBySymbols() async throws {

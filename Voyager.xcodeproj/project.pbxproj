@@ -115,6 +115,7 @@
 		84C62E182B04F39B00A11644 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84C62E172B04F39B00A11644 /* SceneDelegate.swift */; };
 		84C62E1F2B04F39C00A11644 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 84C62E1E2B04F39C00A11644 /* Assets.xcassets */; };
 		84C62E222B04F39C00A11644 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 84C62E202B04F39C00A11644 /* LaunchScreen.storyboard */; };
+		84F4C3AF2B27438700485550 /* MiniGameBackground.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84F4C3AE2B27438700485550 /* MiniGameBackground.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -225,6 +226,7 @@
 		84C62E1E2B04F39C00A11644 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		84C62E212B04F39C00A11644 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		84C62E232B04F39C00A11644 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		84F4C3AE2B27438700485550 /* MiniGameBackground.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MiniGameBackground.swift; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -972,6 +974,7 @@
 			isa = PBXGroup;
 			children = (
 				840A3FC92B20C0EC00D12925 /* GameButtonModifier.swift */,
+				84F4C3AE2B27438700485550 /* MiniGameBackground.swift */,
 			);
 			path = Component;
 			sourceTree = "<group>";
@@ -1163,6 +1166,7 @@
 			files = (
 				84AC0DBB2B1F2F60004FA735 /* Stage3References.swift in Sources */,
 				84741EE62B1600C8000B8C59 /* CommonReferences.swift in Sources */,
+				84F4C3AF2B27438700485550 /* MiniGameBackground.swift in Sources */,
 				848AFC052B20810F0071D4AE /* SPRViewModel.swift in Sources */,
 				84AC0D942B1F2ED6004FA735 /* Stage3Game1View.swift in Sources */,
 				84BF520B2B0B7BA700CC2D9F /* WheelViewModel.swift in Sources */,
@@ -1407,7 +1411,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = QX8KLGPA32;
+				DEVELOPMENT_TEAM = L6QNYLXV8A;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Voyager/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -1438,7 +1442,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = QX8KLGPA32;
+				DEVELOPMENT_TEAM = L6QNYLXV8A;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Voyager/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;

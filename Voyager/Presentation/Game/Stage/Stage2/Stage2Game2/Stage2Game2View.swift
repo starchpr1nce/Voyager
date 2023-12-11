@@ -30,15 +30,10 @@ struct Stage2Game2View: View {
                 }
             case .text5:
                 stageView {
-//                    stage2Game2ViewModel.nextText(.game)
-                    stage2ViewModel.setState(.game4)
+                    stage2Game2ViewModel.nextText(.game)
                 }
             case .game:
-                
                 SRPView().environmentObject(SPRViewModel())
-//                stageView {
-//                    stage2ViewModel.setState(.game3)
-//                }
             }
             
             
@@ -54,34 +49,20 @@ struct Stage2Game2View: View {
     @ViewBuilder private func stageView(nextState: @escaping () -> Void) -> some View {
         VStack {
             Text(stage2Game2ViewModel.textOutput)
-                .padding(12)
-                .foregroundStyle(.white)
-                .font(.system(size: 14).monospaced().weight(.bold))
-                .frame(width: UIScreen.main.bounds.width * 0.9, alignment: .topLeading)
-                .multilineTextAlignment(.leading)
-                .background(Color(.textBack))
-                .border(Color.black, width: 2)
-                .padding(.bottom, 2)
+                .gameButtonStyle(.textBack)
             
             Button(action: {
                 nextState()
             }, label: {
                 Text("Дальше")
-                    .padding(12)
-                    .foregroundStyle(.white)
+                    .gameButtonStyle(.nextButton)
                     .opacity(stage2Game2ViewModel.printingFinished ? 0.3 : 1.0)
-                    .font(.system(size: 18).monospaced().weight(.bold))
-                    .frame(width: UIScreen.main.bounds.width * 0.9)
-                    .background(Color(.nextButton))
-                    .border(Color.black, width: 2)
             })
-//            .disabled(stage2Game2ViewModel.printingFinished)
+            .disabled(stage2Game2ViewModel.printingFinished)
             .padding(.bottom)
-            
-            
-            
-        }.frame(minWidth: 0, maxWidth: .infinity, minHeight: 0, maxHeight: .infinity, alignment: .bottom)
-            .onAppear {
+        }
+        .frame(minWidth: 0, maxWidth: .infinity, minHeight: 0, maxHeight: .infinity, alignment: .bottom)
+        .onAppear {
                 stage2Game2ViewModel.printingFinished.toggle()
                 Task {
                     try await writeTextBySymbols()
