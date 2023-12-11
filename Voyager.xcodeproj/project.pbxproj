@@ -250,7 +250,7 @@
 		84C62E1E2B04F39C00A11644 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		84C62E212B04F39C00A11644 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		84C62E232B04F39C00A11644 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		84F4C3AE2B27438700485550 /* MiniGameBackground.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MiniGameBackground.swift; sourceTree = SOURCE_ROOT; };
+		84F4C3AE2B27438700485550 /* MiniGameBackground.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = MiniGameBackground.swift; path = Voyager/Presentation/Base/Component/MiniGameBackground.swift; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -1016,6 +1016,7 @@
 		84B320E22B2765E8005CC51F /* Component */ = {
 			isa = PBXGroup;
 			children = (
+				84F4C3AE2B27438700485550 /* MiniGameBackground.swift */,
 				84B320E32B2765F7005CC51F /* GameButtonModifier.swift */,
 			);
 			path = Component;
@@ -1052,15 +1053,6 @@
 				84BF51E72B0B6CDE00CC2D9F /* ContantView.swift */,
 			);
 			path = Base;
-			sourceTree = "<group>";
-		};
-		84BF51EB2B0B6ECC00CC2D9F /* Component */ = {
-			isa = PBXGroup;
-			children = (
-				840A3FC92B20C0EC00D12925 /* GameButtonModifier.swift */,
-				84F4C3AE2B27438700485550 /* MiniGameBackground.swift */,
-			);
-			path = Component;
 			sourceTree = "<group>";
 		};
 		84BF51EC2B0B6F0300CC2D9F /* MainView */ = {
