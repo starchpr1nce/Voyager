@@ -50,10 +50,13 @@ struct Stage1Game1View: View {
                     stage1Game1ViewModel.nextText(.game)
                 }
             case .game:
-                stageView(src: "") {
-                    stage1ViewModel.setState(.game3)
-                    //                        stage1Game1ViewModel.nextText()
-                }
+                ShellGameView(completion: {
+                    stage1ViewModel.setState(.game2)
+                })
+                    .environmentObject(ShellGameViewModel(cupsCount: 3, winChance: 0.3))
+//                ShellGameView(count: 3, completion: {
+//                    stage1ViewModel.setState(.game2)
+//                })
             }
             
         }
@@ -63,12 +66,12 @@ struct Stage1Game1View: View {
                 character: stage1Game1ViewModel.phraseSource.type.imageName
             )
         }
-//        .onAppear {
-//            stage1ViewModel.setBackImages(
-//                background: "back",
-//                character: stage1Game1ViewModel.phraseSource.type.imageName
-//            )
-//        }
+        .onAppear {
+            stage1ViewModel.setBackImages(
+                background: "back",
+                character: stage1Game1ViewModel.phraseSource.type.imageName
+            )
+        }
     }
     
     @ViewBuilder private func stageView(src: String, nextState: @escaping () -> Void) -> some View {

@@ -1,3 +1,4 @@
+
 import Combine
 
 final class LoteryViewModel: ObservableObject {
@@ -12,7 +13,7 @@ final class LoteryViewModel: ObservableObject {
     
     func setGame() {
         _gameStatus = .game
-    }   
+    }
     func setResult() {
         _gameStatus = .result
     }

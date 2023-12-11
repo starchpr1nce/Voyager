@@ -183,7 +183,7 @@ struct Stage3PreviewView: View {
         for char in stage3PreviewViewModel.phraseSource.text {
             stage3PreviewViewModel.textOutput += String(char)
             if char != " " {
-                try await Task.sleep(nanoseconds: 5_000_000)
+                try await Task.sleep(nanoseconds: Constant.delay)
 //                try await Task.sleep(nanoseconds: Constant.delay)
             }
         }

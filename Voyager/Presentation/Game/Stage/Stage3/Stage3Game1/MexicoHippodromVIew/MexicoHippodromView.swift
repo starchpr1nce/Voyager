@@ -225,7 +225,7 @@ struct AnimatedHorseView: View {
             .offset(x: move ? UIScreen.main.bounds.width - 5 : -150)
         
             .animation (
-                Animation.easeInOut(duration: Double.random(in: 1.5...2.6) / speedMultiplier)
+                Animation.easeInOut(duration: Double.random(in: 1.5...2.6) / speedMultiplier), value: move
             )
             .onAppear {
                 withAnimation {
@@ -235,7 +235,7 @@ struct AnimatedHorseView: View {
     }
 }
 
-
-#Preview {
-    MexicoHippodromView().environmentObject(MexicoHippodromViewModel())
-}
+//
+//#Preview {
+//    MexicoHippodromView().environmentObject(MexicoHippodromViewModel())
+//}

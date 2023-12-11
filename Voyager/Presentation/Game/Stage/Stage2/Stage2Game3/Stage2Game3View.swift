@@ -50,16 +50,18 @@ struct Stage2Game3View: View {
                 }
             case .text10:
                 stageView {
-//                    stage2Game3ViewModel.nextText(.game)
-                    stage2ViewModel.setState(.game4)
+                    stage2Game3ViewModel.nextText(.game)
                 }
-                
             case .game:
-                stageView {
-                    
-                }
+                ShellGameView(completion: {
+                    stage2ViewModel.setState(.game4)
+                })
+                    .environmentObject(ShellGameViewModel(cupsCount: 5
+                                                          , winChance: 0.3))
+//                ShellGameView() {
+//                    stage2ViewModel.setState(.game4)
+//                }
             }
-            
         }
         .onAppear {
             stage2ViewModel.setBackImages(

@@ -65,12 +65,10 @@ struct Stage4Game3View: View {
                 }
             case .text7:
                 stageView {
-                    stage4ViewModel.setState(.game4)
+                    stage4Game3ViewModel.nextText(.game)
                 }
             case .game:
-                stageView {
-                    stage4ViewModel.setState(.preview)
-                }
+                SlotMashineView().environmentObject(SlotMashineViewModel())
             }
             
         }
@@ -120,7 +118,7 @@ struct Stage4Game3View: View {
         for char in stage4Game3ViewModel.phraseSource.text {
             stage4Game3ViewModel.textOutput += String(char)
             if char != " " {
-                try await Task.sleep(nanoseconds: 5_000_000)
+                try await Task.sleep(nanoseconds: Constant.delay)
             }
         }
         stage4Game3ViewModel.printingFinished.toggle()

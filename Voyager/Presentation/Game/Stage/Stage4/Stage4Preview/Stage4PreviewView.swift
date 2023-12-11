@@ -180,7 +180,7 @@ struct Stage4PreviewView: View {
         for char in stage4PreviewViewModel.phraseSource.text {
             stage4PreviewViewModel.textOutput += String(char)
             if char != " " {
-                try await Task.sleep(nanoseconds: 5_000_000)
+                try await Task.sleep(nanoseconds: Constant.delay)
 //                try await Task.sleep(nanoseconds: Constant.delay)
             }
         }

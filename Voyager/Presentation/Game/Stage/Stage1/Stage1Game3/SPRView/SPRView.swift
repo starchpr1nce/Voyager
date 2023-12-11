@@ -6,6 +6,8 @@ import SwiftUI
 struct SRPView: View {
     
     @EnvironmentObject var sprViewModel: SPRViewModel
+    @EnvironmentObject var stage1ViewModel: Stage1ViewModel
+    
     
     
     let myChoise = ["myP", "myR", "myS"]
@@ -158,11 +160,11 @@ struct SRPView: View {
             }
             
             RPSMainButtonView(text: "Ещё разок?") {
-                
+                sprViewModel.setInitial()
             }
             
             RPSMainButtonView(text: "Дальше") {
-                
+                stage1ViewModel.setState(.game4)
             }.padding(.bottom, 52)
         } 
 //        .frame(maxWidth: .infinity)

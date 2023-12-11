@@ -116,7 +116,7 @@ struct Stage4Game4View: View {
         for char in stage4Game4ViewModel.phraseSource.text {
             stage4Game4ViewModel.textOutput += String(char)
             if char != " " {
-                try await Task.sleep(nanoseconds: 5_000_000)
+                try await Task.sleep(nanoseconds: Constant.delay)
             }
         }
         stage4Game4ViewModel.printingFinished.toggle()

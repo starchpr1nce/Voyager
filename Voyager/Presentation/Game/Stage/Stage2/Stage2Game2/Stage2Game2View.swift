@@ -34,11 +34,9 @@ struct Stage2Game2View: View {
                     stage2ViewModel.setState(.game4)
                 }
             case .game:
-                
-                SRPView().environmentObject(SPRViewModel())
-//                stageView {
-//                    stage2ViewModel.setState(.game3)
-//                }
+                DiceView() {
+                    stage2ViewModel.setState(.game3)
+                }
             }
             
             

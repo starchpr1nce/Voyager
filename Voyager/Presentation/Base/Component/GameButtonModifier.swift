@@ -2,9 +2,8 @@
 //  GameButtonModifier.swift
 //  Voyager
 //
-//  Created by admin on 06.12.2023.
+//  Created by admin on 11.12.2023.
 //
-
 import SwiftUI
 
 struct GameButtonModifier: ViewModifier {

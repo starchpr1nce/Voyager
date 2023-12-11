@@ -7,15 +7,16 @@
 
 //MARK: - UPDATE
 
+
 import SwiftUI
 
 struct ShellGameView: View {
+    @EnvironmentObject var viewModel: ShellGameViewModel
     //MARK: - cupsCount = 1, winChance = 0 при плохой карме
-    @ObservedObject var viewModel = ShellGameViewModel(cupsCount: 3, winChance: 0.3)
     @State var reveal: Bool = false
     @State var shuffleInProgress = false
     @State var bet = 0
-    var completion: () -> Void = {}
+    var completion: () -> Void
     
     func play() {
         shuffleInProgress = true
@@ -62,20 +63,18 @@ struct ShellGameView: View {
             }
             .gameButtonStyle(.textBack)
             .zIndex(20)
-            
             VStack {
                 HStack {
                     ForEach(viewModel.cupViews, id: \.id) { cupView in
                         cupView
+                        
                             .disabled(!viewModel.readyToReveal)
                             .minimumScaleFactor(0.1)
                             .frame(maxWidth: 150)
+                        
                     }
                 }
                 .padding()
-                .onAppear {
-                    viewModel.setUpCups(reveal: $reveal)
-                }
                 
                 if !viewModel.isFinish {
                     VStack {
@@ -114,7 +113,7 @@ struct ShellGameView: View {
                             }, label: {
                                 Text("Да")
                                     .gameButtonStyle( .nextButton)
-                            })                        
+                            })
                             Button(action: {
                                 completion()
                             }, label: {
@@ -125,24 +124,32 @@ struct ShellGameView: View {
                     }
                     .padding(.bottom, 6)
                 }
-            }        
+            }
+        }
+        
+        .onAppear {
+            viewModel.setUpCups(reveal: $reveal)
         }
         .frame(maxWidth: .infinity)
         .background {
-                ZStack {
-                    VStack(spacing: 0) {
-                        Spacer()
-                        Rectangle()
-                            .frame(height: 5)
-                        Rectangle()
-                            .foregroundStyle(Color(red: 0.13, green: 0.14, blue: 0.19))
-                            .frame(height: UIScreen.main.bounds.height * 0.5)
-                    }
-                }.ignoresSafeArea()
-            }
+            ZStack {
+                VStack(spacing: 0) {
+                    Spacer()
+                    Rectangle()
+                        .fill(.black)
+                        .frame(height: 5)
+                    Rectangle()
+                        .foregroundStyle(Color(red: 0.13, green: 0.14, blue: 0.19))
+                        .frame(height: UIScreen.main.bounds.height * 0.5)
+                }
+            }.ignoresSafeArea()
+        }
     }
 }
 
 #Preview {
-    ShellGameView()
+    ShellGameView(completion: {
+        //        stage1ViewModel.setState(.game2)
+    })
+    .environmentObject(ShellGameViewModel(cupsCount: 3, winChance: 0.3))
 }

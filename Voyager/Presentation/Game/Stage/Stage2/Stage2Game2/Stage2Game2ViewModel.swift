@@ -23,7 +23,7 @@ final class Stage2Game2ViewModel: ObservableObject {
             phraseSource = Stage2DiceReference.shared.phrases[index]
         } else {
             textOutput = ""
-            self.state = .game
+            self.state = state
         }
     }
 }

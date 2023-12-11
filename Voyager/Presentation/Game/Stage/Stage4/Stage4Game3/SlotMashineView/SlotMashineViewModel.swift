@@ -54,7 +54,7 @@ final class SlotMashineViewModel: ObservableObject {
             if spins >= maxSpins {
                 timer.invalidate()
                 
-                 var winCon = Int.random(in: 0...8)
+                let winCon = Int.random(in: 0...8)
                 
                 if spinCount % 4 == 0 {
                     numbers[0] = winCon

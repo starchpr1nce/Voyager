@@ -19,7 +19,7 @@ final class ShellGameViewModel: ObservableObject {
     @Published var winChance: Float
     
     init(cupsCount: Int = 3, winChance: Float = 1) {
-        self.cupViews = []
+        self.cupViews = [CupView](repeating: CupView(id: 0), count: cupsCount)
         self.cupsCount = cupsCount
         self.winChance = winChance
         self.isFinish = false

@@ -37,24 +37,26 @@ struct Stage1Game3View: View {
                     stage1Game3ViewModel.nextText(.game)
                 }
             case .game:
-                SRPView().environmentObject(SPRViewModel())
+                SRPView()
+                    .environmentObject(SPRViewModel())
+                    .environmentObject(stage1ViewModel)
                     .onAppear {
                         stage1ViewModel.character = PhraseType.students.imageName
                     }
             }
-        }      
+        }
         .onChange(of: stage1Game3ViewModel.state) { _ in
             stage1ViewModel.setBackImages(
                 background: "back",
                 character: stage1Game3ViewModel.phraseSource.type.imageName
             )
         }
-//        .onAppear {
-//            stage1ViewModel.setBackImages(
-//                background: "back",
-//                character: stage1Game3ViewModel.phraseSource.type.imageName
-//            )
-//        }
+        //        .onAppear {
+        //            stage1ViewModel.setBackImages(
+        //                background: "back",
+        //                character: stage1Game3ViewModel.phraseSource.type.imageName
+        //            )
+        //        }
     }
     
     @ViewBuilder private func stageView(nextState: @escaping () -> Void) -> some View {
@@ -92,7 +94,6 @@ struct Stage1Game3View: View {
                 Task {
                     try await writeTextBySymbols()
                 }
-                
             }
     }
     
@@ -108,4 +109,4 @@ struct Stage1Game3View: View {
     
 }
 
-    
+
