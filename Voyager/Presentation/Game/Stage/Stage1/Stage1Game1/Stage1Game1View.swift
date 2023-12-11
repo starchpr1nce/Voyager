@@ -77,34 +77,20 @@ struct Stage1Game1View: View {
     @ViewBuilder private func stageView(src: String, nextState: @escaping () -> Void) -> some View {
         VStack {
             Text(stage1Game1ViewModel.textOutput)
-                .padding(12)
-                .foregroundStyle(.white)
-                .font(.system(size: 14).monospaced().weight(.bold))
-                .frame(width: UIScreen.main.bounds.width * 0.9, alignment: .topLeading)
-                .multilineTextAlignment(.leading)
-                .background(Color(.textBack))
-                .border(Color.black, width: 2)
-                .padding(.bottom, 2)
+                .gameButtonStyle(.textBack)
             
             Button(action: {
                 nextState()
             }, label: {
                 Text("Дальше")
-                    .padding(12)
-                    .foregroundStyle(.white)
+                    .gameButtonStyle(.nextButton)
                     .opacity(stage1Game1ViewModel.printingFinished ? 0.3 : 1.0)
-                    .font(.system(size: 18).monospaced().weight(.bold))
-                    .frame(width: UIScreen.main.bounds.width * 0.9)
-                    .background(Color(.nextButton))
-                    .border(Color.black, width: 2)
             })
             .disabled(stage1Game1ViewModel.printingFinished)
             .padding(.bottom)
-            
-            
-            
-        }.frame(minWidth: 0, maxWidth: .infinity, minHeight: 0, maxHeight: .infinity, alignment: .bottom)
-            .onAppear {
+        }
+        .frame(minWidth: 0, maxWidth: .infinity, minHeight: 0, maxHeight: .infinity, alignment: .bottom)
+        .onAppear {
                 stage1Game1ViewModel.printingFinished.toggle()
                 Task {
                     try await writeTextBySymbols(src)
@@ -116,26 +102,14 @@ struct Stage1Game1View: View {
     @ViewBuilder private func stageViewWithAnswers(src: String, positiveAction: @escaping () -> Void, negativeAction: @escaping () -> Void) -> some View {
         VStack {
             Text(stage1Game1ViewModel.textOutput)
-                .padding(12)
-                .foregroundStyle(.white)
-                .font(.system(size: 14).monospaced().weight(.bold))
-                .frame(width: UIScreen.main.bounds.width * 0.9, alignment: .topLeading)
-                .multilineTextAlignment(.leading)
-                .background(Color(.textBack))
-                .border(Color.black, width: 2)
-                .padding(.bottom, 2)
+                .gameButtonStyle(.textBack)
             
             Button(action: {
                 positiveAction()
             }, label: {
                 Text(stage1Game1ViewModel.phraseSource.answerPositive ?? "")
-                    .padding(12)
-                    .foregroundStyle(.white)
+                    .gameButtonStyle(.nextButton)
                     .opacity(stage1Game1ViewModel.printingFinished ? 0.3 : 1.0)
-                    .font(.system(size: 18).monospaced().weight(.bold))
-                    .frame(width: UIScreen.main.bounds.width * 0.9)
-                    .background(Color(.nextButton))
-                    .border(Color.black, width: 2)
             })
             .disabled(stage1Game1ViewModel.printingFinished)
             .padding(.bottom, 2)
@@ -144,21 +118,14 @@ struct Stage1Game1View: View {
                 negativeAction()
             }, label: {
                 Text(stage1Game1ViewModel.phraseSource.answerNegative ?? "")
-                    .padding(12)
-                    .foregroundStyle(.white)
+                    .gameButtonStyle(.nextButton)
                     .opacity(stage1Game1ViewModel.printingFinished ? 0.3 : 1.0)
-                    .font(.system(size: 18).monospaced().weight(.bold))
-                    .frame(width: UIScreen.main.bounds.width * 0.9)
-                    .background(Color(.nextButton))
-                    .border(Color.black, width: 2)
             })
             .disabled(stage1Game1ViewModel.printingFinished)
             .padding(.bottom)
-            
-            
-            
-        }.frame(minWidth: 0, maxWidth: .infinity, minHeight: 0, maxHeight: .infinity, alignment: .bottom)
-            .onAppear {
+        }
+        .frame(minWidth: 0, maxWidth: .infinity, minHeight: 0, maxHeight: .infinity, alignment: .bottom)
+        .onAppear {
                 stage1Game1ViewModel.printingFinished.toggle()
                 Task {
                     try await writeTextBySymbols(src)

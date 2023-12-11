@@ -76,13 +76,8 @@ struct Stage1Game3View: View {
                 nextState()
             }, label: {
                 Text("Дальше")
-                    .padding(12)
-                    .foregroundStyle(.white)
+                    .gameButtonStyle(.nextButton)
                     .opacity(stage1Game3ViewModel.printingFinished ? 0.3 : 1.0)
-                    .font(.system(size: 18).monospaced().weight(.bold))
-                    .frame(width: UIScreen.main.bounds.width * 0.9)
-                    .background(Color(.nextButton))
-                    .border(Color.black, width: 2)
             })
             .disabled(stage1Game3ViewModel.printingFinished)
             .padding(.bottom)
@@ -95,6 +90,8 @@ struct Stage1Game3View: View {
                     try await writeTextBySymbols()
                 }
             }
+            
+        }
     }
     
     func writeTextBySymbols() async throws {

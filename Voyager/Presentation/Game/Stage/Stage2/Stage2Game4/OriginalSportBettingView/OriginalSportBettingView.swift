@@ -41,13 +41,8 @@ struct OriginalSportBettingView: View {
         VStack {
             Spacer()
             VStack {
-                Text("Кто выйграет-то?")
-                    .foregroundColor(.white)
-                    .font(.headline)
-                    .padding()
-                    .frame(maxWidth: 280)
-                    .background(Color.mint.opacity(1))
-                    .border(Color.black, width: 2)
+                Text("Кто выиграет-то?")
+                    .gameButtonStyle(.textBack)
                 
                 
                 chooseTeamButton(0)
@@ -57,15 +52,17 @@ struct OriginalSportBettingView: View {
                     originalSportBettingViewModel.setChooseBet()
                 }, label: {
                     Text("Ничья: \(originalSportBettingViewModel.drawRate[0], specifier: "%.1f")")
-                        .foregroundColor(.white)
-                        .font(.headline)
-                        .padding()
-                        .frame(maxWidth: 280)
-                        .background(Color.orange.opacity(1))
-                        .border(Color.black, width: 2)
+                        .gameButtonStyle(.nextButton)
                 })
                 chooseTeamButton(1)
                 
+                Button(action: {
+                    originalSportBettingViewModel.playerRate = originalSportBettingViewModel.winRate[1]
+                    originalSportBettingViewModel.setChooseBet()
+                }, label: {
+                    Text("\(originalSportBettingViewModel.teamsArray[1]): \(originalSportBettingViewModel.winRate[1], specifier: "%.1f")")
+                        .gameButtonStyle(.nextButton)
+                })
             } .padding(.bottom, 32)
         } .frame(maxWidth: .infinity)
             .background {
@@ -103,12 +100,7 @@ struct OriginalSportBettingView: View {
             Spacer()
             VStack {
                 Text("Сколько ставим, друг?")
-                    .foregroundColor(.white)
-                    .font(.headline)
-                    .padding()
-                    .frame(maxWidth: 280)
-                    .background(Color.mint.opacity(1))
-                    .border(Color.black, width: 2)
+                    .gameButtonStyle(.textBack)
                 
                 chooseSizeBetButton(0)
                 chooseSizeBetButton(1)
@@ -116,64 +108,25 @@ struct OriginalSportBettingView: View {
                     .padding(.bottom, 32)
                 
             }
-        } .frame(maxWidth: .infinity)
-            .background {
-                ZStack {
-                    VStack(spacing: 0) {
-                        Spacer()
-                        Rectangle()
-                            .frame(height: 5)
-                        Rectangle()
-                            .foregroundStyle(Color(red: 0.13, green: 0.14, blue: 0.19))
-                            .frame(height: UIScreen.main.bounds.height * 0.4)
-                    }
-                }.ignoresSafeArea()
-            }
+        } 
+        .frame(maxWidth: .infinity)
+        .miniGameBackground()
     }
     
     @ViewBuilder private func animatingView() -> some View {
         VStack {
             Spacer()
             Text("Здесь в моих планах была красивая анимация полета мяча и забития голов, но мне просто не хватило денег что бы оплатить этот труд нашего дизайнера Никиты, поэтому я написал текст который вы все равно не прочтете за 1,5 секунды ))))")
-                .foregroundColor(.white)
-                .font(.headline)
-                .padding()
-                .frame(maxWidth: 280)
-                .background(Color.mint.opacity(1))
-                .border(Color.black, width: 2)
-                .padding(.bottom,32)
-        } .frame(maxWidth: .infinity)
-            .background {
-                ZStack {
-                    VStack(spacing: 0) {
-                        Spacer()
-                        Rectangle()
-                            .frame(height: 5)
-                        Rectangle()
-                            .foregroundStyle(Color(red: 0.13, green: 0.14, blue: 0.19))
-                            .frame(height: UIScreen.main.bounds.height * 0.4)
-                    }
-                }.ignoresSafeArea()
+                .gameButtonStyle(.textBack)
+                .padding(.bottom, 10)
+        }
+        .frame(maxWidth: .infinity)
+        .miniGameBackground()
+        .onAppear {
+            DispatchQueue.main.asyncAfter(deadline: .now() + 1.5)  {
+                originalSportBettingViewModel.setResult()
             }
-            .onAppear {
-                DispatchQueue.main.asyncAfter(deadline: .now() + 1.5)  {
-                    originalSportBettingViewModel.setResult()
-                }
-            }
-    }
-    
-    @ViewBuilder private func resultViewButton(_ text: String, action: @escaping () -> Void) -> some View {
-        Button(action: {
-            action()
-        }, label: {
-            Text("\(text)")
-                .foregroundColor(.white)
-                .font(.headline)
-                .padding()
-                .frame(maxWidth: 280)
-                .background(Color.orange.opacity(1))
-                .border(Color.black, width: 2)
-        })
+        }
     }
     
     @ViewBuilder private func resultView() -> some View {
@@ -182,34 +135,21 @@ struct OriginalSportBettingView: View {
         VStack {
             Spacer()
             Text(isWin ? "С Детства за них болею!! И Сына научу!" : "Кривоногие бездари...")
-                .foregroundColor(.white)
-                .font(.headline)
-                .padding()
-                .frame(maxWidth: 280)
-                .background(Color.mint.opacity(1))
-                .border(Color.black, width: 2)
+                .gameButtonStyle(.textBack)
             
+            Button(action: /*@START_MENU_TOKEN@*/{}/*@END_MENU_TOKEN@*/, label: {
+                Text("Ладно, давай ещё разок")
+                    .gameButtonStyle(.nextButton)
+            })
             
-            resultViewButton("Ладно, давай ещё разок") {
-                originalSportBettingViewModel.setChooseTeam()
-            }
-            resultViewButton("Дальше") {
-                
-            } .padding(.bottom, 32)
-            
-        } .frame(maxWidth: .infinity)
-            .background {
-                ZStack {
-                    VStack(spacing: 0) {
-                        Spacer()
-                        Rectangle()
-                            .frame(height: 5)
-                        Rectangle()
-                            .foregroundStyle(Color(red: 0.13, green: 0.14, blue: 0.19))
-                            .frame(height: UIScreen.main.bounds.height * 0.4)
-                    }
-                }.ignoresSafeArea()
-            }
+            Button(action: /*@START_MENU_TOKEN@*/{}/*@END_MENU_TOKEN@*/, label: {
+                Text("Дальше")
+                    .gameButtonStyle(.nextButton)
+            }) 
+            .padding(.bottom, 32)
+        }
+        .frame(maxWidth: .infinity)
+        .miniGameBackground()
     }
     
 }
