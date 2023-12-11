@@ -37,10 +37,6 @@ struct Stage1Game3View: View {
                     stage1Game3ViewModel.nextText(.game)
                 }
             case .game:
-//                stageView {
-//                    
-//                }
-                
                 SRPView().environmentObject(SPRViewModel())
                     .onAppear {
                         stage1ViewModel.character = PhraseType.students.imageName
@@ -67,6 +63,7 @@ struct Stage1Game3View: View {
                 .padding(12)
                 .foregroundStyle(.white)
                 .font(.system(size: 14).monospaced().weight(.bold))
+                .frame(minHeight: 160)
                 .frame(width: UIScreen.main.bounds.width * 0.9, alignment: .topLeading)
                 .multilineTextAlignment(.leading)
                 .background(Color(.textBack))
@@ -87,7 +84,6 @@ struct Stage1Game3View: View {
             })
             .disabled(stage1Game3ViewModel.printingFinished)
             .padding(.bottom)
-            
             
             
         }.frame(minWidth: 0, maxWidth: .infinity, minHeight: 0, maxHeight: .infinity, alignment: .bottom)

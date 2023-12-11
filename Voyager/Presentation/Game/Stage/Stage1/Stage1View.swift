@@ -12,7 +12,7 @@ struct Stage1View: View {
     @EnvironmentObject var stageViewModel: Stage1ViewModel
     @EnvironmentObject var appRouter: NavRouter<AppRouteState>
     @EnvironmentObject var currentStageState: NavRouter<CurrentStageState>
-    
+    //
     var body: some View {
         ZStack {
             Image(stageViewModel.background)
