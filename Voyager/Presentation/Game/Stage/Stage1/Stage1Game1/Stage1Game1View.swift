@@ -77,7 +77,8 @@ struct Stage1Game1View: View {
     @ViewBuilder private func stageView(src: String, nextState: @escaping () -> Void) -> some View {
         VStack {
             Text(stage1Game1ViewModel.textOutput)
-                .gameButtonStyle(.textBack)
+                .gameTextStyle(.textBack)
+                .padding(.bottom, 2)
             
             Button(action: {
                 nextState()
@@ -102,7 +103,8 @@ struct Stage1Game1View: View {
     @ViewBuilder private func stageViewWithAnswers(src: String, positiveAction: @escaping () -> Void, negativeAction: @escaping () -> Void) -> some View {
         VStack {
             Text(stage1Game1ViewModel.textOutput)
-                .gameButtonStyle(.textBack)
+                .gameTextStyle(.textBack)
+                .padding(.bottom, 2)
             
             Button(action: {
                 positiveAction()

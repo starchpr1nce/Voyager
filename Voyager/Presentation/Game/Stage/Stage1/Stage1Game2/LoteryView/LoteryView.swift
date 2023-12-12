@@ -7,7 +7,7 @@ struct LoteryView: View {
     @EnvironmentObject var loteryViewModel: LoteryViewModel
     @EnvironmentObject var stage1ViewModel: Stage1ViewModel
     
-    var winChanse = [1,2,3,4,5,6,7,8,9,10].shuffled()
+    
 
     var body: some View {
         VStack {
@@ -41,7 +41,7 @@ struct LoteryView: View {
                     )
             }  else if loteryViewModel.secondStep {
                 
-                Image(winChanse[0] < 6 ? "ticketSemiLose" : "ticketSemiWin")
+                Image(loteryViewModel.winChanse[0] < 6 ? "ticketSemiLose" : "ticketSemiWin")
                     .gesture(
                         DragGesture()
                             .onChanged { _ in
@@ -54,13 +54,13 @@ struct LoteryView: View {
                     )
                 
             } else if  loteryViewModel.thirdStep {
-                Image(winChanse[0] < 6 ? "ticketLose" : "ticketWin")
+                Image(loteryViewModel.winChanse[0] < 6 ? "ticketLose" : "ticketWin")
                     .onAppear {
                         DispatchQueue.main.asyncAfter(deadline: .now() + 1.5) {
                             loteryViewModel.setResult()
                         }
+                    }
             }
-            
         }
         .frame(maxWidth: .infinity)
             .background {
@@ -75,11 +75,11 @@ struct LoteryView: View {
                             }
                         }.ignoresSafeArea()
                     }
-            }
-        }
+            
+        
         .frame(maxWidth: .infinity)
         .miniGameBackground()
-    }
+    } // View
     
     @ViewBuilder private func resultViewButton(_ text: String, action: @escaping () -> Void) -> some View {
         Button(action: {
@@ -98,17 +98,19 @@ struct LoteryView: View {
     @ViewBuilder private func resultView() -> some View {
         
         VStack {
-            Text(winChanse[0] < 6 ?  "В следующий раз повезет" : "Повезло - повезлоо!")
+            Text(loteryViewModel.winChanse[0] < 6 ?  "В следующий раз повезет" : "Повезло - повезлоо!")
                 .gameButtonStyle(.textBack)
-            
-            resultViewButton("Дальше") {
+           
+            Button(action: {
                 stage1ViewModel.setState(.game3)
             }, label: {
                 Text("Дальше")
                     .gameButtonStyle(.nextButton)
             })
             
-            Button(action: {}, label: {
+            Button(action: {
+                loteryViewModel.setGame()
+            }, label: {
                 Text("А давай еще один")
                     .gameButtonStyle(.nextButton)
             })
@@ -119,7 +121,8 @@ struct LoteryView: View {
 }
 
 
-#Preview {
-    LoteryView()
-        .environmentObject(LoteryViewModel())
-}
+
+//#Preview {
+//    LoteryView()
+//        .environmentObject(LoteryViewModel())
+//}

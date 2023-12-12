@@ -51,25 +51,18 @@ struct Stage1Game3View: View {
                 character: stage1Game3ViewModel.phraseSource.type.imageName
             )
         }
-        //        .onAppear {
-        //            stage1ViewModel.setBackImages(
-        //                background: "back",
-        //                character: stage1Game3ViewModel.phraseSource.type.imageName
-        //            )
-        //        }
+                .onAppear {
+                    stage1ViewModel.setBackImages(
+                        background: "back",
+                        character: stage1Game3ViewModel.phraseSource.type.imageName
+                    )
+                }
     }
     
     @ViewBuilder private func stageView(nextState: @escaping () -> Void) -> some View {
         VStack {
             Text(stage1Game3ViewModel.textOutput)
-                .padding(12)
-                .foregroundStyle(.white)
-                .font(.system(size: 14).monospaced().weight(.bold))
-                .frame(minHeight: 160)
-                .frame(width: UIScreen.main.bounds.width * 0.9, alignment: .topLeading)
-                .multilineTextAlignment(.leading)
-                .background(Color(.textBack))
-                .border(Color.black, width: 2)
+                .gameTextStyle(.textBack)
                 .padding(.bottom, 2)
             
             Button(action: {
@@ -92,7 +85,7 @@ struct Stage1Game3View: View {
             }
             
         }
-    }
+    
     
     func writeTextBySymbols() async throws {
         for char in stage1Game3ViewModel.phraseSource.text {

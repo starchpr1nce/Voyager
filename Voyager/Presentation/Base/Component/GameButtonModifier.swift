@@ -20,3 +20,20 @@ struct GameButtonModifier: ViewModifier {
             .border(Color.black, width: 2)
     }
 }
+
+struct GameTextModifier: ViewModifier {
+    var backgroundColor: Color
+    var width: CGFloat
+
+    func body(content: Content) -> some View {
+        content
+            .padding(12)
+            .foregroundStyle(.white)
+            .font(.system(size: 14).monospaced().weight(.bold))
+            .frame(minHeight: 160)
+            .frame(width: width, alignment: .topLeading)
+            .multilineTextAlignment(.leading)
+            .background(backgroundColor)
+            .border(Color.black, width: 2)
+    }
+}

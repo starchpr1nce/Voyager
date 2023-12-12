@@ -13,27 +13,6 @@ struct Stage4PreviewView: View {
     @StateObject var stage4PreviewViewModel = Stage4PreviewViewModel()
     var body: some View {
         ZStack {
-            Image("back")
-                .resizable()
-                .ignoresSafeArea(.all)
-            Image(stage4PreviewViewModel.phraseSource.type.imageName)
-                .resizable()
-                .scaledToFit()
-                .padding(.horizontal)
-            VStack {
-                HStack {
-                    Button(action: {
-                        appRouter.pop()
-                    }, label: {
-                        Image("backArrow")
-                            .resizable()
-                            .frame(width: 12, height: 20)
-                            .padding()
-                    })
-                    Spacer()
-                }
-                Spacer()
-            }
             switch stage4PreviewViewModel.state {
             case .text0:
                 stageView(src: stage4PreviewViewModel.phraseSource.text) {
@@ -77,16 +56,27 @@ struct Stage4PreviewView: View {
                 } negativeAction: {
                     stage4ViewModel.setState(.game1)
                 }
-
-                
             }
+        }
+        .onAppear {
+            stage4ViewModel.setBackImages(
+                background: "back",
+                character: stage4PreviewViewModel.phraseSource.type.imageName
+            )
+        }
+        .onChange(of: stage4PreviewViewModel.state) { _ in
+            stage4ViewModel.setBackImages(
+                background: "back",
+                character: stage4PreviewViewModel.phraseSource.type.imageName
+            )
         }
     }
     
     @ViewBuilder private func stageView(src: String, nextState: @escaping () -> Void) -> some View {
         VStack {
             Text(stage4PreviewViewModel.textOutput)
-                .gameButtonStyle(.textBack)
+                .gameTextStyle(.textBack)
+                .padding(.bottom, 2)
             
             Button(action: {
                 nextState()
@@ -111,7 +101,8 @@ struct Stage4PreviewView: View {
     @ViewBuilder private func stageViewWithAnswers(customText: String? = nil, positiveAction: @escaping () -> Void, negativeAction: @escaping () -> Void) -> some View {
         VStack {
             Text(customText ?? stage4PreviewViewModel.textOutput)
-                .gameButtonStyle(.textBack)
+                .gameTextStyle(.textBack)
+                .padding(.bottom, 2)
             
             Button(action: {
                 positiveAction()
@@ -156,7 +147,7 @@ struct Stage4PreviewView: View {
 }
 
 
-#Preview {
-    Stage4PreviewView()
-}
-
+//#Preview {
+//    Stage4PreviewView()
+//}
+//

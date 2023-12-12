@@ -30,6 +30,16 @@ final class SPRViewModel: ObservableObject {
         _gameStatus = .endGame
     }
     
+    func resetGame() {
+        _gameStatus = .initial
+        gameOutcome = ""
+        wins = 0
+        loses = 0
+        round = 0
+        showAlert = false
+        showComputerChoice = false
+    }
+    
     
     
 

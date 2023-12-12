@@ -8,32 +8,10 @@
 import SwiftUI
 
 struct Stage4Game2View: View {
-    @EnvironmentObject var stage3ViewModel: Stage3ViewModel
-    @EnvironmentObject var appRouter: NavRouter<AppRouteState>
+    @EnvironmentObject var stage4ViewModel: Stage4ViewModel
     @StateObject var stage4Game2ViewModel = Stage4Game2ViewModel()
     var body: some View {
         ZStack {
-            Image("back")
-                .resizable()
-                .ignoresSafeArea(.all)
-            Image(stage4Game2ViewModel.phraseSource.type.imageName)
-                .resizable()
-                .scaledToFit()
-                .padding(.horizontal)
-            VStack {
-                HStack {
-                    Button(action: {
-                        appRouter.pop()
-                    }, label: {
-                        Image("backArrow")
-                            .resizable()
-                            .frame(width: 12, height: 20)
-                            .padding()
-                    })
-                    Spacer()
-                }
-                Spacer()
-            }
             switch stage4Game2ViewModel.state {
             case .text0:
                 stageView {
@@ -89,23 +67,36 @@ struct Stage4Game2View: View {
                 }
             case .text13:
                 stageViewWithAnswers {
-                    stage3ViewModel.setState(.game3)
+                    stage4ViewModel.setState(.game3)
                 } negativeAction: {
-                    stage3ViewModel.setState(.game3)
+                    stage4ViewModel.setState(.game3)
                 }
             case .game:
                 stageView {
-                    stage3ViewModel.setState(.preview)
+                    stage4ViewModel.setState(.preview)
                 }
             }
             
+        }
+        .onAppear {
+            stage4ViewModel.setBackImages(
+                background: "back",
+                character: stage4Game2ViewModel.phraseSource.type.imageName
+            )
+        }
+        .onChange(of: stage4Game2ViewModel.state) { _ in
+            stage4ViewModel.setBackImages(
+                background: "back",
+                character: stage4Game2ViewModel.phraseSource.type.imageName
+            )
         }
     }
     
     @ViewBuilder private func stageView(nextState: @escaping () -> Void) -> some View {
         VStack {
             Text(stage4Game2ViewModel.textOutput)
-                .gameButtonStyle(.textBack)
+                .gameTextStyle(.textBack)
+                .padding(.bottom, 2)
             
             Button(action: {
                 nextState()
@@ -134,7 +125,8 @@ struct Stage4Game2View: View {
     @ViewBuilder private func stageViewWithAnswers(customText: String? = nil, positiveAction: @escaping () -> Void, negativeAction: @escaping () -> Void) -> some View {
         VStack {
             Text(customText ?? stage4Game2ViewModel.textOutput)
-                .gameButtonStyle(.textBack)
+                .gameTextStyle(.textBack)
+                .padding(.bottom, 2)
             
             Button(action: {
                 positiveAction()

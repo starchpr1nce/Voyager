@@ -100,12 +100,19 @@ struct Stage2Game1View: View {
                 character: stage2Game1ViewModel.phraseSource.type.imageName
             )
         }
+        .onChange(of: stage2Game1ViewModel.state) { _ in
+            stage2ViewModel.setBackImages(
+                background: "back",
+                character: stage2Game1ViewModel.phraseSource.type.imageName
+            )
+        }
     }
     
     @ViewBuilder private func stageView(nextState: @escaping () -> Void) -> some View {
         VStack {
             Text(stage2Game1ViewModel.textOutput)
-                .gameButtonStyle(.textBack)
+                .gameTextStyle(.textBack)
+                .padding(.bottom, 2)
             
             Button(action: {
                 nextState()

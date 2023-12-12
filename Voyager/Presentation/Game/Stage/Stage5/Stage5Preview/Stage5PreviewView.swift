@@ -4,80 +4,73 @@ struct Stage5PreviewView: View {
     
     @StateObject var stage5PreviewViewModel = Stage5PreviewViewModel()
     @EnvironmentObject var stage5ViewModel: Stage5ViewModel
-    @EnvironmentObject var appRouter: NavRouter<AppRouteState>
     
     var body: some View {
         ZStack {
-            Image("back")
-                .resizable()
-                .ignoresSafeArea(.all)
-            Image(stage5PreviewViewModel.phraseSource.type.imageName)
-                .resizable()
-                .scaledToFit()
-                .padding(.horizontal)
-            VStack {
-                HStack {
-                    Button(action: {}, label: {
-                        Image("backArrow")
-                            .resizable()
-                            .frame(width: 12, height: 20)
-                            .padding()
-                    })
-                    Spacer()
+            
+            switch stage5PreviewViewModel.state {
+            case .text0:
+                stageView {
+                    stage5PreviewViewModel.nextText(.text1)
                 }
-                Spacer()
+            case .text1:
+                stageView {
+                    stage5PreviewViewModel.nextText(.text2)
+                }
+            case .text2:
+                stageView {
+                    stage5PreviewViewModel.nextText(.text3)
+                }
+            case .text3:
+                stageView {
+                    stage5PreviewViewModel.nextText(.text4)
+                }
+            case .text4:
+                stageView {
+                    stage5PreviewViewModel.nextText(.text5)
+                }
+            case .text5:
+                stageView {
+                    stage5PreviewViewModel.nextText(.text6)
+                }
+            case .text6:
+                stageView {
+                    stage5PreviewViewModel.nextText(.text7)
+                }
+            case .text7:
+                stageView {
+                    stage5PreviewViewModel.nextText(.text8)
+                }
+            case .text8:
+                stageView {
+                    stage5PreviewViewModel.nextText(.text9)
+                }
+            case .text9:
+                stageView {
+                    stage5ViewModel.setState(.game1)
+                }
             }
+            
         }
-        
-        switch stage5PreviewViewModel.state {
-        case .text0:
-            stageView {
-                stage5PreviewViewModel.nextText(.text1)
-            }
-        case .text1:
-            stageView {
-                stage5PreviewViewModel.nextText(.text2)
-            }
-        case .text2:
-            stageView {
-                stage5PreviewViewModel.nextText(.text3)
-            }
-        case .text3:
-            stageView {
-                stage5PreviewViewModel.nextText(.text4)
-            }
-        case .text4:
-            stageView {
-                stage5PreviewViewModel.nextText(.text5)
-            }
-        case .text5:
-            stageView {
-                stage5PreviewViewModel.nextText(.text6)
-            }
-        case .text6:
-            stageView {
-                stage5PreviewViewModel.nextText(.text7)
-            }
-        case .text7:
-            stageView {
-                stage5PreviewViewModel.nextText(.text8)
-            }
-        case .text8:
-            stageView {
-                stage5PreviewViewModel.nextText(.text9)
-            }
-        case .text9:
-            stageView {
-                stage5ViewModel.setState(.game1)
-            }
+        .onAppear {
+            stage5ViewModel.setBackImages(
+                background: "back",
+                character: stage5PreviewViewModel.phraseSource.type.imageName
+            )
         }
-        
+        .onChange(of: stage5PreviewViewModel.state) { _ in
+            stage5ViewModel.setBackImages(
+                background: "back",
+                character: stage5PreviewViewModel.phraseSource.type.imageName
+            )
+        }
     }
     
     @ViewBuilder private func stageView(nextState: @escaping () -> Void) -> some View {
         VStack {
             Text(stage5PreviewViewModel.textOutput)
-                .gameButtonStyle(.textBack)
+                .gameTextStyle(.textBack)
+                .padding(.bottom, 2)
             
             Button(action: {
                 nextState()

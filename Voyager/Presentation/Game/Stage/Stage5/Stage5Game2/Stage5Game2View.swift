@@ -8,27 +8,6 @@ struct Stage5Game2View: View {
     
     var body: some View {
         ZStack {
-            Image("back")
-                .resizable()
-                .ignoresSafeArea(.all)
-            Image(stage5Game2ViewModel.phraseSource.type.imageName)
-                .resizable()
-                .scaledToFit()
-                .padding(.horizontal)
-            VStack {
-                HStack {
-                    Button(action: {
-                        appRouter.pop()
-                    }, label: {
-                        Image("backArrow")
-                            .resizable()
-                            .frame(width: 12, height: 20)
-                            .padding()
-                    })
-                    Spacer()
-                }
-                Spacer()
-            }
             switch stage5Game2ViewModel.state {
             case .text0:
                 stageView {
@@ -89,11 +68,24 @@ struct Stage5Game2View: View {
                 }
             }
         }
+        .onAppear {
+            stage5ViewModel.setBackImages(
+                background: "back",
+                character: stage5Game2ViewModel.phraseSource.type.imageName
+            )
+        }
+        .onChange(of: stage5Game2ViewModel.state) { _ in
+            stage5ViewModel.setBackImages(
+                background: "back",
+                character: stage5Game2ViewModel.phraseSource.type.imageName
+            )
+        }
     }
     @ViewBuilder private func stageView(nextState: @escaping () -> Void) -> some View {
         VStack {
             Text(stage5Game2ViewModel.textOutput)
-                .gameButtonStyle(.textBack)
+                .gameTextStyle(.textBack)
+                .padding(.bottom, 2)
             
             Button(action: {
                 nextState()

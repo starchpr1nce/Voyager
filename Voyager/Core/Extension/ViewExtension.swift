@@ -15,4 +15,8 @@ extension View {
     func miniGameBackground(height: CGFloat? = nil) -> some View {
         self.modifier(MiniGameBackground(height: height ?? 0.4))
     }
+    
+    func gameTextStyle(_ backgroundColor: Color, width: CGFloat = UIScreen.main.bounds.width * 0.9) -> some View {
+        self.modifier(GameTextModifier(backgroundColor: backgroundColor, width: width))
+    }
 }

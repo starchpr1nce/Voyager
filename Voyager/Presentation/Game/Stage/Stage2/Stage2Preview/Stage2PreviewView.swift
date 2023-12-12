@@ -66,12 +66,19 @@ struct Stage2PreviewView: View {
                 character: stage2PreviewViewModel.phraseSource.type.imageName
             )
         }
+        .onChange(of: stage2PreviewViewModel.state) { _ in
+            stage2ViewModel.setBackImages(
+                background: "back",
+                character: stage2PreviewViewModel.phraseSource.type.imageName
+            )
+        }
     }
     
     @ViewBuilder private func stageView(nextState: @escaping () -> Void) -> some View {
         VStack {
             Text(stage2PreviewViewModel.textOutput)
-                .gameButtonStyle(.textBack)
+                .gameTextStyle(.textBack)
+                .padding(.bottom, 2)
             
             Button(action: {
                 nextState()
@@ -95,7 +102,8 @@ struct Stage2PreviewView: View {
     @ViewBuilder private func stageViewWithAnswers(src: String? = nil, positiveAction: @escaping () -> Void, negativeAction: @escaping () -> Void) -> some View {
         VStack {
             Text(src ?? stage2PreviewViewModel.textOutput)
-                .gameButtonStyle(.textBack)
+                .gameTextStyle(.textBack)
+                .padding(.bottom, 2)
             
             Button(action: {
                 //                nextState()

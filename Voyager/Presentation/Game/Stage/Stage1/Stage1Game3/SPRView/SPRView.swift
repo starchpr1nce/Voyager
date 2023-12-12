@@ -130,19 +130,15 @@ struct SRPView: View {
             }
             
             RPSMainButtonView(text: "Ещё разок?") {
-                sprViewModel.setInitial()
+                sprViewModel.resetGame()
             }
             
             RPSMainButtonView(text: "Дальше") {
                 stage1ViewModel.setState(.game4)
             }.padding(.bottom, 52)
-        } 
-//        .frame(maxWidth: .infinity)
-            .background {
-                gameBack
-            }
-            .padding(.bottom, 52)
         }
+        .padding(.bottom, 52)
+        
         .frame(maxWidth: .infinity)
         .miniGameBackground()
         
@@ -150,10 +146,11 @@ struct SRPView: View {
 }
 
 
-#Preview {
-    SRPView()
-        .environmentObject(SPRViewModel())
-}
+//
+//#Preview {
+//    SRPView()
+//        .environmentObject(SPRViewModel())
+//}
 
 struct RPSMainButtonView: View {
     let text: String

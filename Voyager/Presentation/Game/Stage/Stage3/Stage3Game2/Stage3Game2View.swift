@@ -9,31 +9,9 @@ import SwiftUI
 
 struct Stage3Game2View: View {
     @EnvironmentObject var stage3ViewModel: Stage3ViewModel
-    @EnvironmentObject var appRouter: NavRouter<AppRouteState>
     @StateObject var stage3Game2ViewModel = Stage3Game2ViewModel()
     var body: some View {
         ZStack {
-            Image("back")
-                .resizable()
-                .ignoresSafeArea(.all)
-            Image(stage3Game2ViewModel.phraseSource.type.imageName)
-                .resizable()
-                .scaledToFit()
-                .padding(.horizontal)
-            VStack {
-                HStack {
-                    Button(action: {
-                        appRouter.pop()
-                    }, label: {
-                        Image("backArrow")
-                            .resizable()
-                            .frame(width: 12, height: 20)
-                            .padding()
-                    })
-                    Spacer()
-                }
-                Spacer()
-            }
             switch stage3Game2ViewModel.state {
             case .text0:
                 stageView {
@@ -63,12 +41,25 @@ struct Stage3Game2View: View {
             }
             
         }
+        .onAppear {
+            stage3ViewModel.setBackImages(
+                background: "back",
+                character: stage3Game2ViewModel.phraseSource.type.imageName
+            )
+        }
+        .onChange(of: stage3Game2ViewModel.state) { _ in
+            stage3ViewModel.setBackImages(
+                background: "back",
+                character: stage3Game2ViewModel.phraseSource.type.imageName
+            )
+        }
     }
     
     @ViewBuilder private func stageView(nextState: @escaping () -> Void) -> some View {
         VStack {
             Text(stage3Game2ViewModel.textOutput)
-                .gameButtonStyle(.textBack)
+                .gameTextStyle(.textBack)
+                .padding(.bottom, 2)
             
             Button(action: {
                 nextState()

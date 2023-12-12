@@ -13,27 +13,6 @@ struct Stage3Game3View: View {
     @StateObject var stage3Game3ViewModel = Stage3Game3ViewModel()
     var body: some View {
         ZStack {
-            Image("back")
-                .resizable()
-                .ignoresSafeArea(.all)
-            Image(stage3Game3ViewModel.phraseSource.type.imageName)
-                .resizable()
-                .scaledToFit()
-                .padding(.horizontal)
-            VStack {
-                HStack {
-                    Button(action: {
-                        appRouter.pop()
-                    }, label: {
-                        Image("backArrow")
-                            .resizable()
-                            .frame(width: 12, height: 20)
-                            .padding()
-                    })
-                    Spacer()
-                }
-                Spacer()
-            }
             switch stage3Game3ViewModel.state {
             case .text0:
                 stageView {
@@ -68,18 +47,30 @@ struct Stage3Game3View: View {
                     stage3Game3ViewModel.nextText(.game)
                 }
             case .game:
-                Text("")
                 
                     UpdetedSportBettingView().environmentObject(UpdetedSportBettingViewModel())
             }
             
+        }
+        .onAppear {
+            stage3ViewModel.setBackImages(
+                background: "back",
+                character: stage3Game3ViewModel.phraseSource.type.imageName
+            )
+        }
+        .onChange(of: stage3Game3ViewModel.state) { _ in
+            stage3ViewModel.setBackImages(
+                background: "back",
+                character: stage3Game3ViewModel.phraseSource.type.imageName
+            )
         }
     }
     
     @ViewBuilder private func stageView(nextState: @escaping () -> Void) -> some View {
         VStack {
             Text(stage3Game3ViewModel.textOutput)
-                .gameButtonStyle(.textBack)
+                .gameTextStyle(.textBack)
+                .padding(.bottom, 2)
             
             Button(action: {
                 nextState()

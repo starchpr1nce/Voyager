@@ -9,31 +9,9 @@ import SwiftUI
 
 struct Stage3Game4View: View {
     @EnvironmentObject var stage3ViewModel: Stage3ViewModel
-    @EnvironmentObject var appRouter: NavRouter<AppRouteState>
     @StateObject var stage3Game4ViewModel = Stage3Game4ViewModel()
     var body: some View {
         ZStack {
-            Image("back")
-                .resizable()
-                .ignoresSafeArea(.all)
-            Image(stage3Game4ViewModel.phraseSource.type.imageName)
-                .resizable()
-                .scaledToFit()
-                .padding(.horizontal)
-            VStack {
-                HStack {
-                    Button(action: {
-                        appRouter.pop()
-                    }, label: {
-                        Image("backArrow")
-                            .resizable()
-                            .frame(width: 12, height: 20)
-                            .padding()
-                    })
-                    Spacer()
-                }
-                Spacer()
-            }
             switch stage3Game4ViewModel.state {
             case .text0:
                 stageView {
@@ -91,12 +69,26 @@ struct Stage3Game4View: View {
             }
             
         }
+        .onAppear {
+            stage3ViewModel.setBackImages(
+                background: "back",
+                character: stage3Game4ViewModel.phraseSource.type.imageName
+            )
+        }
+        .onChange(of: stage3Game4ViewModel.state) { _ in
+            stage3ViewModel.setBackImages(
+                background: "back",
+                character: stage3Game4ViewModel.phraseSource.type.imageName
+            )
+        }
+        
     }
     
     @ViewBuilder private func stageView(nextState: @escaping () -> Void) -> some View {
         VStack {
             Text(stage3Game4ViewModel.textOutput)
-                .gameButtonStyle(.textBack)
+                .gameTextStyle(.textBack)
+                .padding(.bottom, 2)
             
             Button(action: {
                 nextState()

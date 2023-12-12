@@ -26,6 +26,9 @@ final class Stage3Game4ViewModel: ObservableObject {
             index += 1
             textOutput = ""
             phraseSource = Stage3WheelComplicatedReference.shared.phrases[index]
+        } else {
+            textOutput = ""
+            self.state = state
         }
     }
 }
