@@ -487,6 +487,7 @@
 		844D156B2B1A2AB400896576 /* Stage2Game1 */ = {
 			isa = PBXGroup;
 			children = (
+				84BF52072B0B7B8A00CC2D9F /* Wheel */,
 				844D15742B1A2B1200896576 /* Stage2Game1View.swift */,
 				844D15762B1A2B1A00896576 /* Stage2Game1ViewModel.swift */,
 			);
@@ -626,187 +627,6 @@
 			path = Stage5;
 			sourceTree = "<group>";
 		};
-		84741EBD2B15E575000B8C59 /* Thimbles */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Thimbles;
-			sourceTree = "<group>";
-		};
-		84741EBE2B15E599000B8C59 /* Lottery */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Lottery;
-			sourceTree = "<group>";
-		};
-		84741EBF2B15E5A4000B8C59 /* RPS */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = RPS;
-			sourceTree = "<group>";
-		};
-		84741EC02B15E5AD000B8C59 /* StrangerArgument */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = StrangerArgument;
-			sourceTree = "<group>";
-		};
-		84741EC12B15E5DC000B8C59 /* Stage1 */ = {
-			isa = PBXGroup;
-			children = (
-				84741EC02B15E5AD000B8C59 /* StrangerArgument */,
-				84741EBF2B15E5A4000B8C59 /* RPS */,
-				84741EBE2B15E599000B8C59 /* Lottery */,
-				84741EBD2B15E575000B8C59 /* Thimbles */,
-			);
-			path = Stage1;
-			sourceTree = "<group>";
-		};
-		84741EC22B15E5E9000B8C59 /* Stage2 */ = {
-			isa = PBXGroup;
-			children = (
-				84741EC52B15E61A000B8C59 /* Bet */,
-				84741EC42B15E60A000B8C59 /* ThimblesComplicated */,
-				84741EC32B15E5F8000B8C59 /* Dice */,
-				84BF52072B0B7B8A00CC2D9F /* Wheel */,
-			);
-			path = Stage2;
-			sourceTree = "<group>";
-		};
-		84741EC32B15E5F8000B8C59 /* Dice */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Dice;
-			sourceTree = "<group>";
-		};
-		84741EC42B15E60A000B8C59 /* ThimblesComplicated */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = ThimblesComplicated;
-			sourceTree = "<group>";
-		};
-		84741EC52B15E61A000B8C59 /* Bet */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Bet;
-			sourceTree = "<group>";
-		};
-		84741EC62B15E633000B8C59 /* Stage3 */ = {
-			isa = PBXGroup;
-			children = (
-				8413DFBD2B0F770D009AE42F /* WheelComplicated */,
-				84741EC92B15E658000B8C59 /* BetComplicated */,
-				84741EC82B15E643000B8C59 /* TwentyOne */,
-				84741EC72B15E639000B8C59 /* Hippodrome */,
-			);
-			path = Stage3;
-			sourceTree = "<group>";
-		};
-		84741EC72B15E639000B8C59 /* Hippodrome */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Hippodrome;
-			sourceTree = "<group>";
-		};
-		84741EC82B15E643000B8C59 /* TwentyOne */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = TwentyOne;
-			sourceTree = "<group>";
-		};
-		84741EC92B15E658000B8C59 /* BetComplicated */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = BetComplicated;
-			sourceTree = "<group>";
-		};
-		84741ECA2B15E672000B8C59 /* Stage4 */ = {
-			isa = PBXGroup;
-			children = (
-				84741ECE2B15E69D000B8C59 /* BettingWColleagues */,
-				84741ECD2B15E697000B8C59 /* Slot */,
-				84741ECC2B15E68D000B8C59 /* Invest */,
-				84741ECB2B15E67E000B8C59 /* LotteryExpensive */,
-			);
-			path = Stage4;
-			sourceTree = "<group>";
-		};
-		84741ECB2B15E67E000B8C59 /* LotteryExpensive */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = LotteryExpensive;
-			sourceTree = "<group>";
-		};
-		84741ECC2B15E68D000B8C59 /* Invest */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Invest;
-			sourceTree = "<group>";
-		};
-		84741ECD2B15E697000B8C59 /* Slot */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Slot;
-			sourceTree = "<group>";
-		};
-		84741ECE2B15E69D000B8C59 /* BettingWColleagues */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = BettingWColleagues;
-			sourceTree = "<group>";
-		};
-		84741ECF2B15E6D0000B8C59 /* Stage5 */ = {
-			isa = PBXGroup;
-			children = (
-				84741ED32B15E70D000B8C59 /* Stocks */,
-				84741ED22B15E708000B8C59 /* Charity */,
-				84741ED12B15E6FE000B8C59 /* Crypto */,
-				84741ED02B15E6F4000B8C59 /* Options */,
-			);
-			path = Stage5;
-			sourceTree = "<group>";
-		};
-		84741ED02B15E6F4000B8C59 /* Options */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Options;
-			sourceTree = "<group>";
-		};
-		84741ED12B15E6FE000B8C59 /* Crypto */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Crypto;
-			sourceTree = "<group>";
-		};
-		84741ED22B15E708000B8C59 /* Charity */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Charity;
-			sourceTree = "<group>";
-		};
-		84741ED32B15E70D000B8C59 /* Stocks */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Stocks;
-			sourceTree = "<group>";
-		};
 		84741ED42B15E736000B8C59 /* StringReferences */ = {
 			isa = PBXGroup;
 			children = (
@@ -884,6 +704,7 @@
 		84AC0D7F2B1F2ED6004FA735 /* Stage3Game4 */ = {
 			isa = PBXGroup;
 			children = (
+				8413DFBD2B0F770D009AE42F /* WheelComplicated */,
 				84AC0D802B1F2ED6004FA735 /* Stage3Game4View.swift */,
 				84AC0D812B1F2ED6004FA735 /* Stage3Game4ViewModel.swift */,
 			);
@@ -1103,22 +924,9 @@
 			isa = PBXGroup;
 			children = (
 				8413DFC72B0FAE11009AE42F /* Stage */,
-				84BF52062B0B7B5A00CC2D9F /* Farmers */,
 				84741E692B14E3E8000B8C59 /* GameView.swift */,
 			);
 			path = Game;
-			sourceTree = "<group>";
-		};
-		84BF52062B0B7B5A00CC2D9F /* Farmers */ = {
-			isa = PBXGroup;
-			children = (
-				84741ECF2B15E6D0000B8C59 /* Stage5 */,
-				84741ECA2B15E672000B8C59 /* Stage4 */,
-				84741EC62B15E633000B8C59 /* Stage3 */,
-				84741EC22B15E5E9000B8C59 /* Stage2 */,
-				84741EC12B15E5DC000B8C59 /* Stage1 */,
-			);
-			path = Farmers;
 			sourceTree = "<group>";
 		};
 		84BF52072B0B7B8A00CC2D9F /* Wheel */ = {
