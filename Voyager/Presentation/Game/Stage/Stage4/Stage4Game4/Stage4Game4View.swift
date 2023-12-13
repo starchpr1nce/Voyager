@@ -39,7 +39,7 @@ struct Stage4Game4View: View {
                 }
             case .text6:
                 stageView {
-                    stage4ViewModel.setState(.preview)
+                    stage4Game4ViewModel.nextText(.game)
                 }
             case .game:
                 stageView {

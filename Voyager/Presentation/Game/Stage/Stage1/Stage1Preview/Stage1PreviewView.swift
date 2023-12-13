@@ -10,6 +10,8 @@ import SwiftUI
 struct Stage1PreviewView: View {
     @StateObject var stage1PreviewViewModel = Stage1PreviewViewModel()
     @EnvironmentObject var stage1ViewModel: Stage1ViewModel
+    @State var blur: CGFloat = 0
+    
     var body: some View {
         ZStack {
             Group {
@@ -45,6 +47,12 @@ struct Stage1PreviewView: View {
                 Task {
                     try await writeTextBySymbols()
                 }
+            }
+        }
+        .blur(radius: blur, opaque: false)
+        .onAppear {
+            withAnimation(.easeIn(duration: 1).repeatForever(autoreverses: true)) {
+                blur = 1
             }
         }
     }

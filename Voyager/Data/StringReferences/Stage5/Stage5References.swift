@@ -77,7 +77,7 @@ struct Stage5OptionsReference: PhraseDelegate {
     
     private let text1 = PhraseData(
         text: "- Ну ты здорово поднялся, ничего, конечно, не скажешь. С уважаемыми господами дела делаешь.",
-        type: .interlocutor
+        type: .thimblesMan
     )
     
     private let text2 = PhraseData(
@@ -87,7 +87,7 @@ struct Stage5OptionsReference: PhraseDelegate {
     
     private let text3 = PhraseData(
         text: "- А ты пробовал сложить все деньги в одну большую кучу и вложиться как следует? Сейчас много всякой хери с валютами, бизнесами и прочим, есть же варики разные.",
-        type: .interlocutor
+        type: .thimblesMan
     )
     
     private let text4 = PhraseData(
@@ -97,7 +97,7 @@ struct Stage5OptionsReference: PhraseDelegate {
     
     private let text5 = PhraseData(
         text: "- Да вот есть сейчас типо как казино, только связано с ценами на разные активы, обычные и электронные. Если ты способен анализировать много данных, много новостей, то ты сможешь угадать и поставить на рост или на понижение, и поднять свою прибыль.",
-        type: .interlocutor
+        type: .thimblesMan
     )
     
     private let text6 = PhraseData(
@@ -107,7 +107,7 @@ struct Stage5OptionsReference: PhraseDelegate {
     
     private let text7 = PhraseData(
         text: "- Да кто его знает, тема новая, участников выше крыши.",
-        type: .interlocutor
+        type: .thimblesMan
     )
     
     private let text8 = PhraseData(
@@ -117,7 +117,7 @@ struct Stage5OptionsReference: PhraseDelegate {
     
     private let text9 = PhraseData(
         text: "- Бинарные опционы.",
-        type: .interlocutor
+        type: .thimblesMan
     )
     
     private let text10 = PhraseData(
@@ -146,7 +146,7 @@ struct Stage5CryptoReference: PhraseDelegate {
     
     private let text2 = PhraseData(
         text: "- Вторая? Ты опять попросишь, чтобы я за тебя придумал, как тебе соскочить с этой жизни лихой и разгульной?",
-        type: .interlocutor
+        type: .thimblesMan
     )
     
     private let text3 = PhraseData(
@@ -156,7 +156,7 @@ struct Stage5CryptoReference: PhraseDelegate {
     
     private let text4 = PhraseData(
         text: "- Ооо…",
-        type: .interlocutor
+        type: .thimblesMan
     )
     
     private let text5 = PhraseData(
@@ -171,7 +171,7 @@ struct Stage5CryptoReference: PhraseDelegate {
     
     private let text7 = PhraseData(
         text: "- Много всякого, мировой кризис в первую очередь, банковский беспредел, конфискация средств из всяких оффшоров вместо экономических преобразований для издыхающей экономики.",
-        type: .interlocutor
+        type: .thimblesMan
     )
     
     private let text8 = PhraseData(
@@ -181,7 +181,7 @@ struct Stage5CryptoReference: PhraseDelegate {
     
     private let text9 = PhraseData(
         text: "- Мне давали поручение объяснить браткам, почему в золоте больше деньги никто не хранит, или только хранит, и не приумножает. Пришлось разбираться, много часов ушло. Да сейчас уже нет таких тайн, интернет изменил всё, всё можно найти. Если время есть и желание.",
-        type: .interlocutor
+        type: .thimblesMan
     )
     
     private let text10 = PhraseData(
@@ -191,7 +191,7 @@ struct Stage5CryptoReference: PhraseDelegate {
     
     private let text11 = PhraseData(
         text: "- А ты знаешь, какие новости нужно читать? Новостей в мире больше, чем событий, и уж точно больше, чем реальных перемен в наших жизнях. Шерстить можно, но тут нужно ещё разбираться, в чём смысл новых валют, почему одни механизмы крипты перспективнее, чем другие. Немного напоминает стартапы: нужно знать, что проканает, и в это вложиться. А для этого нужно въехать.",
-        type: .interlocutor
+        type: .thimblesMan
     )
     
     private let text12 = PhraseData(
@@ -215,32 +215,32 @@ struct Stage5CharityReference: PhraseDelegate {
     
     private let text1 = PhraseData(
         text: "- Привет. Я спросить хотел, ты всю жизнь в этих делах варишься, ты не думал выходить в легал, чтобы от греха?",
-        type: .interlocutor
+        type: .mc
     )
     
     private let text2 = PhraseData(
         text: "- А куда у нас выйдешь? Я пытался одно время разузнать про покупку спортсменов, на западе же есть такое, люди деньги на этом делают.",
-        type: .mc
+        type: .sportsman
     )
     
     private let text3 = PhraseData(
         text: "- У тебя есть такие суммы?",
-        type: .interlocutor
+        type: .mc
     )
     
     private let text4 = PhraseData(
         text: "- Нет конечно, откуда. Но у меня было достаточно на руках свободных денег, чтобы покупать молодёжь. Типо вкладываешься в мальца, которого тренируют, годы идут, он растёт, и в итоге из него получается полноценный спортсмен. Цена вырастает раза в 4 или 6, просто ждать долго и случиться может всё, что угодно. Вдруг его обучат плохо? Или выпустят играть в дождик, он поскользнётся и сломает лодыжку? Вариантов тьма, ну а чтобы исключать риски, нужна индустрия, поставленный процесс, инкубация игроков и атлетов, а у нас, сам знаешь…",
-        type: .mc
+        type: .sportsman
     )
     
     private let text5 = PhraseData(
         text: "- Хм, интересно. Может, можно вложиться так в каких-то студентов, проучить их в каком-нибудь западном вузе, а потом продать на контракт?",
-        type: .interlocutor
+        type: .mc
     )
     
     private let text6 = PhraseData(
         text: "- Да чего ты ко мне-то суёшься с такими вещами? Я шарю-то только в футболе. Я скорее вложусь в продажу хороших мячиков, чем смогу заработать вот так, как ты говоришь.",
-        type: .mc
+        type: .sportsman
     )
     
     private let text7 = PhraseData(
@@ -255,7 +255,7 @@ struct Stage5CharityReference: PhraseDelegate {
     
     private let text9 = PhraseData(
         text: "- Привет. Да какие-то могут, какие-то нет. А ты хочешь вложиться во что-то? В этот раз уже поздновато, а то многие ниши заполнили с момента нашей прошлой встречи.",
-        type: .interlocutor
+        type: .investMan
     )
     
     private let text10 = PhraseData(
@@ -265,7 +265,7 @@ struct Stage5CharityReference: PhraseDelegate {
     
     private let text11 = PhraseData(
         text: "- Можно сделать вложение в людские ресурсы. Сейчас люди с запада выкупают грамотных специалистов из стран третьего мира, чтобы сажать на многолетние контракты по низкой цене. Низкой по и меркам, по нашим меркам это сытая жизнь за бугром.",
-        type: .interlocutor
+        type: .investMan
     )
     
     private let text12 = PhraseData(
@@ -275,7 +275,7 @@ struct Stage5CharityReference: PhraseDelegate {
     
     private let text13 = PhraseData(
         text: "- Частично. Нужно оплатить человеку переезд, обеспечение на время учёбы, стажировку, курсы, изучение языка, повышение специализации и так далее. Взамен он будет искать работу через контору, которая тебя оформит как его спонсора. Есть конторы, которые сдают в аренду работников, забирая себе часть выплат. Вот такие тебе и нужны, они будут обеспечивать весь процесс.",
-        type: .interlocutor
+        type: .investMan
     )
     
     private let text14 = PhraseData(
@@ -285,7 +285,7 @@ struct Stage5CharityReference: PhraseDelegate {
     
     private let text15 = PhraseData(
         text: "- Конечно, произойти может всё, что угодно. Например, пока учится парень, будет возвращаться домой в свой провинциальной отчизне, как его посадит на нож какой-нибудь гопник. Вот и всё, ребята.",
-        type: .interlocutor
+        type: .investMan
     )
     
     private let text16 = PhraseData(
@@ -295,7 +295,7 @@ struct Stage5CharityReference: PhraseDelegate {
     
     private let text17 = PhraseData(
         text: "- Меня нет, говори за себя.",
-        type: .interlocutor
+        type: .investMan
     )
     
     private let text18 = PhraseData(
@@ -319,7 +319,7 @@ struct Stage5StocksReference: PhraseDelegate {
     
     private let text1 = PhraseData(
         text: "- Всё, беда, нам конец, шулеры уйдут на дно. То есть мы, честные игроки, труженники, уйдём на дно, всё…",
-        type: .interlocutor
+        type: .casinoPartner
     )
     
     private let text2 = PhraseData(
@@ -329,7 +329,7 @@ struct Stage5StocksReference: PhraseDelegate {
     
     private let text3 = PhraseData(
         text: "- Да это куда не шло, его можно хоть переждать и вернуться, а тут… Ты ведь в курсе, что мы с тобой греемся на солнышке, до тех пор, пока оно ещё светит?",
-        type: .interlocutor
+        type: .casinoPartner
     )
     
     private let text4 = PhraseData(
@@ -339,7 +339,7 @@ struct Stage5StocksReference: PhraseDelegate {
     
     private let text5 = PhraseData(
         text: "- Я тебе про всю атмосферу и ситуацию в целом. Казино, бабло, веселье – это всё привилегии развитых социумов, где у людей чуть выше среднего есть свободные деньги и желание с ними расстаться. А теперь наш социум стремительно таким быть перестанет.",
-        type: .interlocutor
+        type: .casinoPartner
     )
     
     private let text6 = PhraseData(
@@ -349,17 +349,17 @@ struct Stage5StocksReference: PhraseDelegate {
     
     private let text7 = PhraseData(
         text: "- Ты вообще не смотришь новости? Ах да, у тебя же нет телевизора. И голова не работает. Короче, нас обступают. Или нет, нам говорят, что нас обступают, а это куда важнее. Пропаганда поёт во все стороны, что, типо, враг у ворот, кругом лишь предатели и друзей у нас нет.",
-        type: .interlocutor
+        type: .casinoPartner
     )
     
     private let text8 = PhraseData(
         text: "- Задолбался я объяснять. Сейчас может случиться всё, что угодно: от ускоренной инфляции цен из-за проблем с экономикой до горячих столкновений неизвестно кого с не пойми кем из-за поводов, о существовании которых мы узнаем в самый последний день.",
-        type: .interlocutor
+        type: .casinoPartner
     )
     
     private let text9 = PhraseData(
         text: "- Короче, денег теперь не станет совсем, и это нас погубит куда больше, чем к одиннадцати туз…",
-        type: .interlocutor
+        type: .casinoPartner
     )
     
     private let text10 = PhraseData(
@@ -374,7 +374,7 @@ struct Stage5StocksReference: PhraseDelegate {
     
     private let text12 = PhraseData(
         text: "- Я подозреваю, что и в этом случае маза есть смухлевать. Ты ведь слышал про инвестиции в акции?",
-        type: .interlocutor
+        type: .casinoPartner
     )
     
     private let text13 = PhraseData(
@@ -384,7 +384,7 @@ struct Stage5StocksReference: PhraseDelegate {
     
     private let text14 = PhraseData(
         text: "- Да, но тут и просто сохранить было бы неплохо, перезимовать, а потом, может, и вывести чуть побольше. Короче, я думаю так: у нас ведь есть деньги?",
-        type: .interlocutor
+        type: .casinoPartner
     )
 
     private let text15 = PhraseData(
@@ -394,7 +394,7 @@ struct Stage5StocksReference: PhraseDelegate {
     
     private let text16 = PhraseData(
         text: "- Без них ещё не умеем пока, ну во всяком случае мы?",
-        type: .interlocutor
+        type: .casinoPartner
     )
     
     private let text17 = PhraseData(
@@ -404,7 +404,7 @@ struct Stage5StocksReference: PhraseDelegate {
     
     private let text18 = PhraseData(
         text: "- А за деньги отвечает кто? Кто их печатает?",
-        type: .interlocutor
+        type: .casinoPartner
     )
     
     private let text19 = PhraseData(
@@ -414,7 +414,7 @@ struct Stage5StocksReference: PhraseDelegate {
     
     private let text20 = PhraseData(
         text: "- Вот туда я и вложу всё, что есть. У нас один такой банк, где самый главный начальник дружит с первыми лицами и уже давно. И сейчас у него цена на акции подупала, на фоне тревожных событий и предпосылок, так что я несу всё туда. Ты смотри давай сам, я тебя, если что, предупредил.",
-        type: .interlocutor
+        type: .casinoPartner
     )
     
     private let text21 = PhraseData(

@@ -9,8 +9,6 @@ import SwiftUI
 
 struct WheelGameStateView: View {
     @EnvironmentObject var wheelViewModel: WheelViewModel
-    @State private var isGame = false
-    @State var gameResult = ""
     var body: some View {
         Image("wheel_back")
             .resizable()
@@ -26,7 +24,6 @@ struct WheelGameStateView: View {
         }.frame(minWidth: 0, maxWidth: .infinity, minHeight: 0, maxHeight: .infinity)
             .onAppear {
                 DispatchQueue.main.asyncAfter(deadline: .now() + 0.3, execute: {
-                    isGame = true
                     if #available(iOS 17.0, *) {
                         withAnimation(.easeOut(duration: wheelViewModel.timeRemaining)) {
                             wheelViewModel.angle = Double.random(in: 900.0...3000.0)
@@ -36,10 +33,16 @@ struct WheelGameStateView: View {
                         let remains = finishAngle.truncatingRemainder(dividingBy: 1.0)
                         let resultAngle = remains * 360.0
                         let result = wheelViewModel.getRW(result: resultAngle)
-                        gameResult = "\(result.num) \(result.color)"
-                        print(result)
-                        DispatchQueue.main.asyncAfter(deadline: .now() + 1.5, execute: {
-                            wheelViewModel.setResultScene()
+                        wheelViewModel.resultGameRWData = result
+                        let amountResult = wheelViewModel.calculateGameResult(
+                            amount: wheelViewModel.amount,
+                            selectType: wheelViewModel.selectType,
+                            result: result,
+                            colorSelect: wheelViewModel.colorSelect,
+                            numSelect: wheelViewModel.numSelect
+                        )
+                        DispatchQueue.main.asyncAfter(deadline: .now() + 0.5, execute: {
+                            wheelViewModel.setResultScene(amountResult)
                         })
                     }
                     } else {
@@ -51,10 +54,16 @@ struct WheelGameStateView: View {
                             let remains = finishAngle.truncatingRemainder(dividingBy: 1.0)
                             let resultAngle = remains * 360.0
                             let result = wheelViewModel.getRW(result: resultAngle)
-                            gameResult = "\(result.num) \(result.color)"
-                            print(result)
-                            DispatchQueue.main.asyncAfter(deadline: .now() + 1.5, execute: {
-                                wheelViewModel.setResultScene()
+                            wheelViewModel.resultGameRWData = result
+                            let amountResult = wheelViewModel.calculateGameResult(
+                                amount: wheelViewModel.amount,
+                                selectType: wheelViewModel.selectType,
+                                result: result,
+                                colorSelect: wheelViewModel.colorSelect,
+                                numSelect: wheelViewModel.numSelect
+                            )
+                            DispatchQueue.main.asyncAfter(deadline: .now() + 0.5, execute: {
+                                wheelViewModel.setResultScene(amountResult)
                             })
                         }
                     }

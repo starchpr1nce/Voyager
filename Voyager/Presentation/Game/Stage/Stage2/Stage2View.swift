@@ -49,7 +49,7 @@ struct Stage2View: View {
             case .game4:
                 Stage2Game4View()
             case .freePlay:
-                Stage2FreePlayView()
+                Stage2FreeplayView()
                     .environmentObject(currentStageState)
             }
         }
@@ -57,18 +57,3 @@ struct Stage2View: View {
     }
 }
 
-struct Stage2FreePlayView: View {
-    @EnvironmentObject var currentStageState: NavRouter<CurrentStageState>
-    @EnvironmentObject var stage2ViewModel: Stage2ViewModel
-    var body: some View {
-        VStack {
-            Text("free play")
-            Button(action: {
-                currentStageState.push(route: .stage3)
-                StorageManager.shared.setCurrentStage(.stage3)
-            }, label: {
-                Text("stage 3")
-            })
-        }
-    }
-}

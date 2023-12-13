@@ -31,6 +31,14 @@ final class MexicoHippodromViewModel: ObservableObject {
         _gameStatus = .result
     }
     
+    func resetGame() {
+        self.selectedRate = 0.0
+        self.selectedBetSize = 0
+        self.horsesNames = self.horsesNames.shuffled()
+        self.horsesRate = self.horsesRate.shuffled()
+        self._gameStatus = .chooseHorse
+    }
+    
     func determineWine() -> Bool {
         let winChance: Double
         

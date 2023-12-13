@@ -9,6 +9,7 @@ import SwiftUI
 
 struct WheelView: View {
     @EnvironmentObject var wheelViewModel: WheelViewModel
+    var completion: () -> Void = {}
     var body: some View {
         ZStack {
                 switch wheelViewModel.sceneState {
@@ -25,7 +26,9 @@ struct WheelView: View {
                 case .game:
                     WheelGameStateView()
                 case .result:
-                    Text("")
+                    WheelResultStateView() {
+                        completion()
+                    }
                 }
 
         }.environmentObject(wheelViewModel)

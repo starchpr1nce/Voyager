@@ -51,6 +51,10 @@ struct Stage4PreviewView: View {
                     stage4PreviewViewModel.nextText(.text9)
                 }
             case .text9:
+                stageView(src: stage4PreviewViewModel.phraseSource.text) {
+                    stage4PreviewViewModel.nextText(.text10)
+                }
+            case .text10:
                 stageViewWithAnswers {
                     stage4ViewModel.setState(.game1)
                 } negativeAction: {
@@ -145,9 +149,3 @@ struct Stage4PreviewView: View {
         stage4PreviewViewModel.printingFinished.toggle()
     }
 }
-
-
-//#Preview {
-//    Stage4PreviewView()
-//}
-//

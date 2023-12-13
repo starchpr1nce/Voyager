@@ -3,7 +3,6 @@ import SwiftUI
 struct Stage1Game2View: View {
     
     @EnvironmentObject var stage1ViewModel: Stage1ViewModel
-    @EnvironmentObject var appRouter: NavRouter<AppRouteState>
     @StateObject var stage1Game2ViewModel = Stage1Game2ViewModel()
     
     var body: some View {
@@ -26,10 +25,10 @@ struct Stage1Game2View: View {
                     stage1Game2ViewModel.nextText(.game)
                 }
             case .game:
-//                stageView {
-//                    
-//                }
-                LoteryView().environmentObject(LoteryViewModel())
+                LoteryView() {
+                    stage1ViewModel.setState(.game3)
+                }
+                .environmentObject(LoteryViewModel())
             }
         }
         .onAppear {

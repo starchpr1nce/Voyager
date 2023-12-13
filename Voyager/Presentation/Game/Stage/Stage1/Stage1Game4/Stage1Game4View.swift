@@ -3,7 +3,6 @@ import SwiftUI
 struct Stage1Game4View: View {
     
     @EnvironmentObject var stage1ViewModel: Stage1ViewModel
-    @EnvironmentObject var appRouter: NavRouter<AppRouteState>
     @StateObject var stage1Game4ViewModel = Stage1Game4ViewModel()
     @EnvironmentObject var currentStageState: NavRouter<CurrentStageState>
     
@@ -36,8 +35,7 @@ struct Stage1Game4View: View {
                 }
             case .game:
                 BetWithStrangerView(winChance: 0.5) {
-                    currentStageState.push(route: .stage2)
-                    StorageManager.shared.setCurrentStage(.stage2)
+                    stage1ViewModel.setState(.freePlay)
                 }
 //                stageView {
 

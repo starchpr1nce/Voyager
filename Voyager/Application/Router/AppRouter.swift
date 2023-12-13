@@ -39,7 +39,7 @@ struct AppRouter: View {
                         .transition(.move(edge: .trailing))
                 }
             }
-//            .transition(.scale)/////
+//            .transition(.scale)
         }
         
     }

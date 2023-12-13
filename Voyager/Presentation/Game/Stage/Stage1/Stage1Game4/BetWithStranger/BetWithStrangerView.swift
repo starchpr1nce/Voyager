@@ -53,22 +53,24 @@ struct BetWithStrangerView: View {
     var body: some View {
         VStack {
             Spacer()
+            VStack {
+                ZStack() {
+                    FrontCoin().opacity(flipped ? 0.0 : 1.0)
+                    BackCoin().opacity(flipped ? 1.0 : 0.0)
+                }
+                .modifier(
+                    FlipEffect(flipped: $flipped,
+                               angle: animate3d ? 720 + deltaAngle : 0,
+                               axis: (x: CGFloat.random(in: 0...1),
+                                      y: CGFloat.random(in: 0...1)))
+                )
+                .scaleEffect(CGSize(width: scaled ? 1.5 : 1.0, height: scaled ? 1.5 : 1.0))
+                .onTapGesture {
+                    flip()
+                }
+                .padding(15)
+            }
             
-            ZStack() {
-                FrontCoin().opacity(flipped ? 0.0 : 1.0)
-                BackCoin().opacity(flipped ? 1.0 : 0.0)
-            }
-            .modifier(
-                FlipEffect(flipped: $flipped, 
-                           angle: animate3d ? 720 + deltaAngle : 0,
-                           axis: (x: CGFloat.random(in: 0...1),
-                                  y: CGFloat.random(in: 0...1)))
-            )
-            .scaleEffect(CGSize(width: scaled ? 1.5 : 1.0, height: scaled ? 1.5 : 1.0))
-            .onTapGesture {
-                flip()
-            }
-            .padding(50)
             if !isFinishPresented {
                 VStack {
                     Text("Поставить")
@@ -112,6 +114,8 @@ struct BetWithStrangerView: View {
             }
             
         }
+        .frame(maxWidth: .infinity)
+        .miniGameBackground(height: 0.5)
     }
 }
 
@@ -162,7 +166,3 @@ struct BackCoin : View {
             .frame(width: 150, height: 150)
     }
 }
-
-//#Preview {
-//    BetWithStrangerView()
-//}

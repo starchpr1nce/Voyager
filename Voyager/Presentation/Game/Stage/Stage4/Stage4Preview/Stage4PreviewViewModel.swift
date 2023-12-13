@@ -15,7 +15,7 @@ final class Stage4PreviewViewModel: ObservableObject {
     @Published var index = 0
     
     enum Stage4PreviewState {
-        case text0, text1, text2, text3, text4, text5, text6, text7, text8, text9
+        case text0, text1, text2, text3, text4, text5, text6, text7, text8, text9, text10
     }
     
     func nextText(_ state: Stage4PreviewState) {

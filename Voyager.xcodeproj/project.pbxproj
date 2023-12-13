@@ -45,6 +45,24 @@
 		8413DFCA2B0FAE2B009AE42F /* Stage1View.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8413DFC92B0FAE2B009AE42F /* Stage1View.swift */; };
 		8413DFCC2B0FAE60009AE42F /* Stage1ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8413DFCB2B0FAE60009AE42F /* Stage1ViewModel.swift */; };
 		8413DFCF2B0FAF96009AE42F /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8413DFCE2B0FAF96009AE42F /* Router.swift */; };
+		844827622B29E8FF004EF5F7 /* WheelComplicatedBetStateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 844827612B29E8FF004EF5F7 /* WheelComplicatedBetStateView.swift */; };
+		844827642B29E916004EF5F7 /* WheelComplicatedSetupTypeStateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 844827632B29E916004EF5F7 /* WheelComplicatedSetupTypeStateView.swift */; };
+		844827662B29E925004EF5F7 /* WheelComplicatedByColorStateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 844827652B29E925004EF5F7 /* WheelComplicatedByColorStateView.swift */; };
+		844827682B29E933004EF5F7 /* WheelComplicatedByNumStateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 844827672B29E933004EF5F7 /* WheelComplicatedByNumStateView.swift */; };
+		8448276A2B29E940004EF5F7 /* WheelComplicatedByBothStateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 844827692B29E940004EF5F7 /* WheelComplicatedByBothStateView.swift */; };
+		8448276C2B29E952004EF5F7 /* WheelComplicatedGameStateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8448276B2B29E952004EF5F7 /* WheelComplicatedGameStateView.swift */; };
+		8448276E2B29E961004EF5F7 /* WheelComplicatedResultStateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8448276D2B29E961004EF5F7 /* WheelComplicatedResultStateView.swift */; };
+		844827772B29EE18004EF5F7 /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 844827702B29EE18004EF5F7 /* CardView.swift */; };
+		844827782B29EE18004EF5F7 /* TwentyOneViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 844827712B29EE18004EF5F7 /* TwentyOneViewModel.swift */; };
+		844827792B29EE18004EF5F7 /* Card.swift in Sources */ = {isa = PBXBuildFile; fileRef = 844827722B29EE18004EF5F7 /* Card.swift */; };
+		8448277A2B29EE18004EF5F7 /* CardRank.swift in Sources */ = {isa = PBXBuildFile; fileRef = 844827732B29EE18004EF5F7 /* CardRank.swift */; };
+		8448277B2B29EE18004EF5F7 /* CardSuit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 844827742B29EE18004EF5F7 /* CardSuit.swift */; };
+		8448277C2B29EE18004EF5F7 /* TwentyOneView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 844827752B29EE18004EF5F7 /* TwentyOneView.swift */; };
+		8448277D2B29EE18004EF5F7 /* CardCombinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 844827762B29EE18004EF5F7 /* CardCombinator.swift */; };
+		8448277F2B2A155E004EF5F7 /* Stage3FreePlayViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8448277E2B2A155E004EF5F7 /* Stage3FreePlayViewModel.swift */; };
+		844827812B2A1576004EF5F7 /* Stage3FreePlayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 844827802B2A1576004EF5F7 /* Stage3FreePlayView.swift */; };
+		844827832B2A1816004EF5F7 /* Stage1FreeplayViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 844827822B2A1816004EF5F7 /* Stage1FreeplayViewModel.swift */; };
+		844827852B2A1827004EF5F7 /* Stage1FreeplayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 844827842B2A1827004EF5F7 /* Stage1FreeplayView.swift */; };
 		844D15712B1A2AFD00896576 /* Stage2PreviewView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 844D15702B1A2AFD00896576 /* Stage2PreviewView.swift */; };
 		844D15732B1A2B0700896576 /* Stage2PreviewViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 844D15722B1A2B0700896576 /* Stage2PreviewViewModel.swift */; };
 		844D15752B1A2B1200896576 /* Stage2Game1View.swift in Sources */ = {isa = PBXBuildFile; fileRef = 844D15742B1A2B1200896576 /* Stage2Game1View.swift */; };
@@ -177,6 +195,24 @@
 		8413DFC92B0FAE2B009AE42F /* Stage1View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Stage1View.swift; sourceTree = "<group>"; };
 		8413DFCB2B0FAE60009AE42F /* Stage1ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Stage1ViewModel.swift; sourceTree = "<group>"; };
 		8413DFCE2B0FAF96009AE42F /* Router.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Router.swift; sourceTree = "<group>"; };
+		844827612B29E8FF004EF5F7 /* WheelComplicatedBetStateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WheelComplicatedBetStateView.swift; sourceTree = "<group>"; };
+		844827632B29E916004EF5F7 /* WheelComplicatedSetupTypeStateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WheelComplicatedSetupTypeStateView.swift; sourceTree = "<group>"; };
+		844827652B29E925004EF5F7 /* WheelComplicatedByColorStateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WheelComplicatedByColorStateView.swift; sourceTree = "<group>"; };
+		844827672B29E933004EF5F7 /* WheelComplicatedByNumStateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WheelComplicatedByNumStateView.swift; sourceTree = "<group>"; };
+		844827692B29E940004EF5F7 /* WheelComplicatedByBothStateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WheelComplicatedByBothStateView.swift; sourceTree = "<group>"; };
+		8448276B2B29E952004EF5F7 /* WheelComplicatedGameStateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WheelComplicatedGameStateView.swift; sourceTree = "<group>"; };
+		8448276D2B29E961004EF5F7 /* WheelComplicatedResultStateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WheelComplicatedResultStateView.swift; sourceTree = "<group>"; };
+		844827702B29EE18004EF5F7 /* CardView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
+		844827712B29EE18004EF5F7 /* TwentyOneViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TwentyOneViewModel.swift; sourceTree = "<group>"; };
+		844827722B29EE18004EF5F7 /* Card.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Card.swift; sourceTree = "<group>"; };
+		844827732B29EE18004EF5F7 /* CardRank.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardRank.swift; sourceTree = "<group>"; };
+		844827742B29EE18004EF5F7 /* CardSuit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardSuit.swift; sourceTree = "<group>"; };
+		844827752B29EE18004EF5F7 /* TwentyOneView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TwentyOneView.swift; sourceTree = "<group>"; };
+		844827762B29EE18004EF5F7 /* CardCombinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardCombinator.swift; sourceTree = "<group>"; };
+		8448277E2B2A155E004EF5F7 /* Stage3FreePlayViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Stage3FreePlayViewModel.swift; sourceTree = "<group>"; };
+		844827802B2A1576004EF5F7 /* Stage3FreePlayView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Stage3FreePlayView.swift; sourceTree = "<group>"; };
+		844827822B2A1816004EF5F7 /* Stage1FreeplayViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Stage1FreeplayViewModel.swift; sourceTree = "<group>"; };
+		844827842B2A1827004EF5F7 /* Stage1FreeplayView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Stage1FreeplayView.swift; sourceTree = "<group>"; };
 		844D15702B1A2AFD00896576 /* Stage2PreviewView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Stage2PreviewView.swift; sourceTree = "<group>"; };
 		844D15722B1A2B0700896576 /* Stage2PreviewViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Stage2PreviewViewModel.swift; sourceTree = "<group>"; };
 		844D15742B1A2B1200896576 /* Stage2Game1View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Stage2Game1View.swift; sourceTree = "<group>"; };
@@ -450,6 +486,7 @@
 		8413DFBD2B0F770D009AE42F /* WheelComplicated */ = {
 			isa = PBXGroup;
 			children = (
+				844827602B29E88A004EF5F7 /* Subview */,
 				8413DFBE2B0F7728009AE42F /* WheelComplicatedView.swift */,
 				8413DFC02B0F77B1009AE42F /* WheelComplicatedViewModel.swift */,
 			);
@@ -490,6 +527,34 @@
 				8413DFCB2B0FAE60009AE42F /* Stage1ViewModel.swift */,
 			);
 			path = Stage1;
+			sourceTree = "<group>";
+		};
+		844827602B29E88A004EF5F7 /* Subview */ = {
+			isa = PBXGroup;
+			children = (
+				844827612B29E8FF004EF5F7 /* WheelComplicatedBetStateView.swift */,
+				844827632B29E916004EF5F7 /* WheelComplicatedSetupTypeStateView.swift */,
+				844827652B29E925004EF5F7 /* WheelComplicatedByColorStateView.swift */,
+				844827672B29E933004EF5F7 /* WheelComplicatedByNumStateView.swift */,
+				844827692B29E940004EF5F7 /* WheelComplicatedByBothStateView.swift */,
+				8448276B2B29E952004EF5F7 /* WheelComplicatedGameStateView.swift */,
+				8448276D2B29E961004EF5F7 /* WheelComplicatedResultStateView.swift */,
+			);
+			path = Subview;
+			sourceTree = "<group>";
+		};
+		8448276F2B29EE18004EF5F7 /* TwentyOne */ = {
+			isa = PBXGroup;
+			children = (
+				844827702B29EE18004EF5F7 /* CardView.swift */,
+				844827712B29EE18004EF5F7 /* TwentyOneViewModel.swift */,
+				844827722B29EE18004EF5F7 /* Card.swift */,
+				844827732B29EE18004EF5F7 /* CardRank.swift */,
+				844827742B29EE18004EF5F7 /* CardSuit.swift */,
+				844827752B29EE18004EF5F7 /* TwentyOneView.swift */,
+				844827762B29EE18004EF5F7 /* CardCombinator.swift */,
+			);
+			path = TwentyOne;
 			sourceTree = "<group>";
 		};
 		844D156A2B1A2A9F00896576 /* Stage2Preview */ = {
@@ -753,6 +818,7 @@
 		84AC0D822B1F2ED6004FA735 /* Stage3Game2 */ = {
 			isa = PBXGroup;
 			children = (
+				8448276F2B29EE18004EF5F7 /* TwentyOne */,
 				84AC0D832B1F2ED6004FA735 /* Stage3Game2View.swift */,
 				84AC0D842B1F2ED6004FA735 /* Stage3Game2ViewModel.swift */,
 			);
@@ -885,6 +951,8 @@
 		84B320E52B276608005CC51F /* Stage1Freeplay */ = {
 			isa = PBXGroup;
 			children = (
+				844827822B2A1816004EF5F7 /* Stage1FreeplayViewModel.swift */,
+				844827842B2A1827004EF5F7 /* Stage1FreeplayView.swift */,
 			);
 			path = Stage1Freeplay;
 			sourceTree = "<group>";
@@ -892,6 +960,8 @@
 		84B320E62B27661B005CC51F /* Stage3Freeplay */ = {
 			isa = PBXGroup;
 			children = (
+				8448277E2B2A155E004EF5F7 /* Stage3FreePlayViewModel.swift */,
+				844827802B2A1576004EF5F7 /* Stage3FreePlayView.swift */,
 			);
 			path = Stage3Freeplay;
 			sourceTree = "<group>";
@@ -1089,18 +1159,23 @@
 			buildActionMask = 2147483647;
 			files = (
 				84AC0DBB2B1F2F60004FA735 /* Stage3References.swift in Sources */,
+				844827812B2A1576004EF5F7 /* Stage3FreePlayView.swift in Sources */,
 				84741EE62B1600C8000B8C59 /* CommonReferences.swift in Sources */,
 				84F4C3AF2B27438700485550 /* MiniGameBackground.swift in Sources */,
+				8448277F2B2A155E004EF5F7 /* Stage3FreePlayViewModel.swift in Sources */,
 				848AFC052B20810F0071D4AE /* SPRViewModel.swift in Sources */,
 				84B320E42B2765F7005CC51F /* GameButtonModifier.swift in Sources */,
 				84AC0D942B1F2ED6004FA735 /* Stage3Game1View.swift in Sources */,
 				84BF520B2B0B7BA700CC2D9F /* WheelViewModel.swift in Sources */,
 				84AC0DAE2B1F2EFF004FA735 /* Stage4Game2ViewModel.swift in Sources */,
 				84B320BC2B2738F5005CC51F /* UpdetedSportBettingViewModel.swift in Sources */,
+				844827832B2A1816004EF5F7 /* Stage1FreeplayViewModel.swift in Sources */,
 				84BF51F92B0B71FB00CC2D9F /* ApplicationController.swift in Sources */,
 				84A63D362B28CF6A00FCDB6F /* WheelGameStateView.swift in Sources */,
+				844827792B29EE18004EF5F7 /* Card.swift in Sources */,
 				8413DFCF2B0FAF96009AE42F /* Router.swift in Sources */,
 				84A63D2C2B28CF3900FCDB6F /* WheelBetStateView.swift in Sources */,
+				8448276A2B29E940004EF5F7 /* WheelComplicatedByBothStateView.swift in Sources */,
 				84AC0DAB2B1F2EFF004FA735 /* Stage4Game1ViewModel.swift in Sources */,
 				84BF51F02B0B6F2300CC2D9F /* SettingsView.swift in Sources */,
 				84A63D2E2B28CF4400FCDB6F /* WheelSetupTypeStateView.swift in Sources */,
@@ -1115,6 +1190,7 @@
 				84741EE32B15F98D000B8C59 /* Stage2References.swift in Sources */,
 				84BF51FB2B0B725D00CC2D9F /* ViewModelFactory.swift in Sources */,
 				848AFBF22B1F5FD70071D4AE /* Stage1Game3ViewModel.swift in Sources */,
+				8448277C2B29EE18004EF5F7 /* TwentyOneView.swift in Sources */,
 				848AFBF02B1F5FCE0071D4AE /* Stage1Game3View.swift in Sources */,
 				84AC0D8F2B1F2ED6004FA735 /* Stage3Game4View.swift in Sources */,
 				84AC0DB12B1F2EFF004FA735 /* Stage4Game4ViewModel.swift in Sources */,
@@ -1127,6 +1203,7 @@
 				8406841F2B1A0DA000E0C8E6 /* Stage1Game1View.swift in Sources */,
 				84741EDB2B15E923000B8C59 /* Stage1References.swift in Sources */,
 				8413DFC12B0F77B1009AE42F /* WheelComplicatedViewModel.swift in Sources */,
+				8448276C2B29E952004EF5F7 /* WheelComplicatedGameStateView.swift in Sources */,
 				8406841D2B1A0D8400E0C8E6 /* Stage1PreviewView.swift in Sources */,
 				84C62E162B04F39B00A11644 /* AppDelegate.swift in Sources */,
 				84AC0DB22B1F2EFF004FA735 /* Stage4PreviewView.swift in Sources */,
@@ -1140,6 +1217,7 @@
 				840BDB322B1E08E6004E1D7C /* Stage5Game2ViewModel.swift in Sources */,
 				840BDB2C2B1E080A004E1D7C /* Stage5Game1View.swift in Sources */,
 				840BDB342B1E08F3004E1D7C /* Stage5Game3View.swift in Sources */,
+				844827852B2A1827004EF5F7 /* Stage1FreeplayView.swift in Sources */,
 				848AFBF62B1F5FEF0071D4AE /* Stage1Game4ViewModel.swift in Sources */,
 				84741E742B14EBBA000B8C59 /* Stage3View.swift in Sources */,
 				84AC0D902B1F2ED6004FA735 /* Stage3Game4ViewModel.swift in Sources */,
@@ -1147,12 +1225,17 @@
 				840A3FC82B20BE3900D12925 /* ViewExtension.swift in Sources */,
 				840DE7552B2732FD00C44540 /* CupView.swift in Sources */,
 				84BF51E82B0B6CDE00CC2D9F /* ContantView.swift in Sources */,
+				8448276E2B29E961004EF5F7 /* WheelComplicatedResultStateView.swift in Sources */,
 				840BDB302B1E08D9004E1D7C /* Stage5Game2View.swift in Sources */,
+				8448277B2B29EE18004EF5F7 /* CardSuit.swift in Sources */,
 				840DE74C2B2732A500C44540 /* GameResult.swift in Sources */,
 				84C62E182B04F39B00A11644 /* SceneDelegate.swift in Sources */,
 				840DE7462B272D7E00C44540 /* SlotMashineView.swift in Sources */,
 				8406842F2B1A0F5000E0C8E6 /* Stage1Game2View.swift in Sources */,
+				844827642B29E916004EF5F7 /* WheelComplicatedSetupTypeStateView.swift in Sources */,
+				8448277D2B29EE18004EF5F7 /* CardCombinator.swift in Sources */,
 				844D157F2B1A2B4A00896576 /* Stage2Game3ViewModel.swift in Sources */,
+				844827782B29EE18004EF5F7 /* TwentyOneViewModel.swift in Sources */,
 				84A63D322B28CF5700FCDB6F /* WheelByNumStateView.swift in Sources */,
 				84A63D302B28CF4E00FCDB6F /* WheelByColorStateView.swift in Sources */,
 				84A63D382B28CF7800FCDB6F /* WheelResultStateView.swift in Sources */,
@@ -1160,6 +1243,7 @@
 				840684222B1A0DCC00E0C8E6 /* Stage1PreviewViewModel.swift in Sources */,
 				840DE7412B272D0500C44540 /* MexicoHippodromView.swift in Sources */,
 				848AFC042B20810F0071D4AE /* SPRView.swift in Sources */,
+				8448277A2B29EE18004EF5F7 /* CardRank.swift in Sources */,
 				84B320BB2B2738F5005CC51F /* UpdetedSportBettingView.swift in Sources */,
 				844D15752B1A2B1200896576 /* Stage2Game1View.swift in Sources */,
 				844D15852B1A2B6900896576 /* Stage2FreeplayView.swift in Sources */,
@@ -1181,7 +1265,10 @@
 				840684112B17945600E0C8E6 /* FinalReference.swift in Sources */,
 				84741EEC2B16514B000B8C59 /* Stage5References.swift in Sources */,
 				84AC0DB52B1F2EFF004FA735 /* Stage4Game3ViewModel.swift in Sources */,
+				844827622B29E8FF004EF5F7 /* WheelComplicatedBetStateView.swift in Sources */,
 				84AC0DAF2B1F2EFF004FA735 /* Stage4View.swift in Sources */,
+				844827682B29E933004EF5F7 /* WheelComplicatedByNumStateView.swift in Sources */,
+				844827662B29E925004EF5F7 /* WheelComplicatedByColorStateView.swift in Sources */,
 				840DE7422B272D0500C44540 /* MexicoHippodromViewModel.swift in Sources */,
 				844D15792B1A2B2F00896576 /* Stage2Game2View.swift in Sources */,
 				84741E722B14EB9A000B8C59 /* Stage2ViewModel.swift in Sources */,
@@ -1211,6 +1298,7 @@
 				84A63D3B2B28D80400FCDB6F /* BetWithStrangerView.swift in Sources */,
 				84AC0D972B1F2ED6004FA735 /* Stage3PreviewViewModel.swift in Sources */,
 				844D15772B1A2B1A00896576 /* Stage2Game1ViewModel.swift in Sources */,
+				844827772B29EE18004EF5F7 /* CardView.swift in Sources */,
 				844D157B2B1A2B3900896576 /* Stage2Game2ViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

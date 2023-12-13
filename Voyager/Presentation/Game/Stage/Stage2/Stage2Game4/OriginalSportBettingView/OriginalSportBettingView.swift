@@ -3,6 +3,7 @@ import SwiftUI
 struct OriginalSportBettingView: View {
     
     @EnvironmentObject var originalSportBettingViewModel: OriginalSportBettingViewModel
+    var completion = {}
     
     var body: some View {
         VStack {
@@ -26,12 +27,13 @@ struct OriginalSportBettingView: View {
             originalSportBettingViewModel.setChooseBet()
         }, label: {
             Text("\(originalSportBettingViewModel.teamsArray[rate]): \(originalSportBettingViewModel.winRate[rate], specifier: "%.1f")")
-                .foregroundColor(.white)
-                .font(.headline)
-                .padding()
-                .frame(maxWidth: 280)
-                .background(Color.orange.opacity(1))
-                .border(Color.black, width: 2)
+                .gameButtonStyle(.nextButton)
+//                .foregroundColor(.white)
+//                .font(.headline)
+//                .padding()
+//                .frame(maxWidth: 280)
+//                .background(Color.orange.opacity(1))
+//                .border(Color.black, width: 2)
         })
         
     }
@@ -56,13 +58,13 @@ struct OriginalSportBettingView: View {
                 })
                 chooseTeamButton(1)
                 
-                Button(action: {
-                    originalSportBettingViewModel.playerRate = originalSportBettingViewModel.winRate[1]
-                    originalSportBettingViewModel.setChooseBet()
-                }, label: {
-                    Text("\(originalSportBettingViewModel.teamsArray[1]): \(originalSportBettingViewModel.winRate[1], specifier: "%.1f")")
-                        .gameButtonStyle(.nextButton)
-                })
+//                Button(action: {
+//                    originalSportBettingViewModel.playerRate = originalSportBettingViewModel.winRate[1]
+//                    originalSportBettingViewModel.setChooseBet()
+//                }, label: {
+//                    Text("\(originalSportBettingViewModel.teamsArray[1]): \(originalSportBettingViewModel.winRate[1], specifier: "%.1f")")
+//                        .gameButtonStyle(.nextButton)
+//                })
             } .padding(.bottom, 32)
         } .frame(maxWidth: .infinity)
             .background {
@@ -86,12 +88,13 @@ struct OriginalSportBettingView: View {
             originalSportBettingViewModel.setAnimation()
         }, label: {
             Text("\(originalSportBettingViewModel.sizeBet[sizeBet])")
-                .foregroundColor(.white)
-                .font(.headline)
-                .padding()
-                .frame(maxWidth: 280)
-                .background(Color.orange.opacity(1))
-                .border(Color.black, width: 2)
+                .gameButtonStyle(.nextButton)
+//                .foregroundColor(.white)
+//                .font(.headline)
+//                .padding()
+//                .frame(maxWidth: 280)
+//                .background(Color.orange.opacity(1))
+//                .border(Color.black, width: 2)
         })
     }
     
@@ -116,7 +119,7 @@ struct OriginalSportBettingView: View {
     @ViewBuilder private func animatingView() -> some View {
         VStack {
             Spacer()
-            Text("Здесь в моих планах была красивая анимация полета мяча и забития голов, но мне просто не хватило денег что бы оплатить этот труд нашего дизайнера Никиты, поэтому я написал текст который вы все равно не прочтете за 1,5 секунды ))))")
+            Text("Здесь в моих планах была красивая анимация полета мяча и забития голов, но мне просто не хватило денег что бы оплатить этот труд нашего дизайнера, поэтому я написал текст который вы все равно не прочтете за 1,5 секунды ))))")
                 .gameButtonStyle(.textBack)
                 .padding(.bottom, 10)
         }
@@ -137,12 +140,16 @@ struct OriginalSportBettingView: View {
             Text(isWin ? "С Детства за них болею!! И Сына научу!" : "Кривоногие бездари...")
                 .gameButtonStyle(.textBack)
             
-            Button(action: /*@START_MENU_TOKEN@*/{}/*@END_MENU_TOKEN@*/, label: {
+            Button(action: {
+                originalSportBettingViewModel.resetGame()
+            }, label: {
                 Text("Ладно, давай ещё разок")
                     .gameButtonStyle(.nextButton)
             })
             
-            Button(action: /*@START_MENU_TOKEN@*/{}/*@END_MENU_TOKEN@*/, label: {
+            Button(action: {
+                completion()
+            }, label: {
                 Text("Дальше")
                     .gameButtonStyle(.nextButton)
             }) 

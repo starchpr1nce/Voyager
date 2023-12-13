@@ -124,7 +124,7 @@ struct Stage1RPSReference: PhraseDelegate {
     
     private let text1 = PhraseData(
         text: "- Дядь, а дядь,.. - обратился один из них.",
-        type: .exFellowStudent
+        type: .students
     )
     
     private let text2 = PhraseData(
@@ -134,7 +134,7 @@ struct Stage1RPSReference: PhraseDelegate {
     
     private let text3 = PhraseData(
         text: "- Мы студенты первокурсники, вот нам стипендию выдали, мы решили взять по пиву, но продавать нам никто не станет, потому что мы на год младше нужного возраста, ведь все пошли  в школу с 6ти лет. Посветить паспортом не получится, может быть, вы возьмёте нам по банке питья? За труды мы накинем немного сверху.",
-        type: .exFellowStudent
+        type: .students
     )
     
     private let text4 = PhraseData(
@@ -144,7 +144,7 @@ struct Stage1RPSReference: PhraseDelegate {
     
     private let text5 = PhraseData(
         text: "- Да, дядь, вам только в казино и работать, разводить на рулетку. Ну давайте, раз уж мы ничего не теряем, только отойдём в сторонку и отопьём понемногу сперва, хорошо?",
-        type: .exFellowStudent
+        type: .students
     )
     
     private let text6 = PhraseData(
@@ -169,7 +169,7 @@ struct Stage1StrangerArgumentReference: PhraseDelegate {
     
     private let text1 = PhraseData(
         text: "- Извините, а что это у вас тут, собственно говоря, происходит? Мужчина, вы чего к молодым пристаёте? Навязали им какие-то игры полублатные – вы чему это учите молодёжь?",
-        type: .casinoPartner
+        type: .hippodromeMan
     )
     
     private let text2 = PhraseData(
@@ -179,7 +179,7 @@ struct Stage1StrangerArgumentReference: PhraseDelegate {
     
     private let text3 = PhraseData(
         text: "- А такое, что я их преподаватель из университета. Эти оборванцы так “внимательно” посещали мои занятия, что даже не успели запомнить, каков я на внешний вид. Сомневаюсь, что они дотянут до сессии, раз у них вместо уравнений пивное веселье по вечерам.",
-        type: .casinoPartner
+        type: .hippodromeMan
     )
     
     private let text4 = PhraseData(
@@ -189,7 +189,7 @@ struct Stage1StrangerArgumentReference: PhraseDelegate {
     
     private let text5 = PhraseData(
         text: "- Согласен, конечно, надо же это как-то прекращать. А шпаргалок у меня вагон, с этим проблем не будет.",
-        type: .casinoPartner
+        type: .hippodromeMan
     )
     
     var phrases: [PhraseData] {

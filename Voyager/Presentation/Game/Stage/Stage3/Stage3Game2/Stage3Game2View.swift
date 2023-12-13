@@ -35,8 +35,8 @@ struct Stage3Game2View: View {
 //                    stage3ViewModel.setState(.game3)
                 }
             case .game:
-                stageView {
-                    stage3ViewModel.setState(.preview)
+                TwentyOneView() {
+                    stage3ViewModel.setState(.game3)
                 }
             }
             

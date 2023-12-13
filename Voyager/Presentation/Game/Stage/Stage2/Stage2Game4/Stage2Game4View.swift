@@ -39,7 +39,10 @@ struct Stage2Game4View: View {
 
             case .game:
 
-                OriginalSportBettingView().environmentObject(OriginalSportBettingViewModel())
+                OriginalSportBettingView() {
+                    stage2ViewModel.setState(.freePlay)
+                }.environmentObject(OriginalSportBettingViewModel())
+                    
             }
         }
         .onAppear {
@@ -71,7 +74,6 @@ struct Stage2Game4View: View {
                     .gameButtonStyle(.nextButton)
                     .opacity(stage2Game4ViewModel.printingFinished ? 0.3 : 1.0)
             })
-//            .disabled(stage2Game4ViewModel.printingFinished)
             .padding(.bottom)
         }
         .frame(minWidth: 0, maxWidth: .infinity, minHeight: 0, maxHeight: .infinity, alignment: .bottom)

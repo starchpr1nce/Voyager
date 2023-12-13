@@ -56,19 +56,3 @@ struct Stage3View: View {
         .environmentObject(stageViewModel)
     }
 }
-
-struct Stage3FreePlayView: View {
-    @EnvironmentObject var currentStageState: NavRouter<CurrentStageState>
-    @EnvironmentObject var stage3ViewModel: Stage3ViewModel
-    var body: some View {
-        VStack {
-            Text("free play")
-            Button(action: {
-                currentStageState.push(route: .stage4)
-                StorageManager.shared.setCurrentStage(.stage4)
-            }, label: {
-                Text("stage 4")
-            })
-        }
-    }
-}

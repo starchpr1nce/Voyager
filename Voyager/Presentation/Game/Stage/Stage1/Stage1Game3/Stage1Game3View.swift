@@ -37,12 +37,13 @@ struct Stage1Game3View: View {
                     stage1Game3ViewModel.nextText(.game)
                 }
             case .game:
-                SRPView()
-                    .environmentObject(SPRViewModel())
-                    .environmentObject(stage1ViewModel)
-                    .onAppear {
-                        stage1ViewModel.character = PhraseType.students.imageName
-                    }
+                SRPView() {
+                    stage1ViewModel.setState(.game4)
+                }
+                .environmentObject(SPRViewModel())
+                .onAppear {
+                    stage1ViewModel.character = PhraseType.students.imageName
+                }
             }
         }
         .onChange(of: stage1Game3ViewModel.state) { _ in

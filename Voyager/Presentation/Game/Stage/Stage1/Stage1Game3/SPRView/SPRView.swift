@@ -2,15 +2,13 @@
 import SwiftUI
 
 struct SRPView: View {
-    
     @EnvironmentObject var sprViewModel: SPRViewModel
-    @EnvironmentObject var stage1ViewModel: Stage1ViewModel
-    
-    
     
     let myChoise = ["myP", "myR", "myS"]
     let enemyChoise = ["enP", "enR", "enS"]
     let wid = UIScreen.main.bounds.width * 0.4
+    
+    var completion = {}
     
     @ViewBuilder private func hands(leftHand: String, rightHand: String) -> some View {
         VStack  {
@@ -25,7 +23,7 @@ struct SRPView: View {
                     .resizable()
                     .frame(width: wid, height: wid)
             }
-        } 
+        }
         .padding(.bottom, 60)
     }
     
@@ -83,7 +81,7 @@ struct SRPView: View {
                     }
                 }
             }
-        } 
+        }
         .miniGameBackground()
     }
     
@@ -112,7 +110,7 @@ struct SRPView: View {
             }
             .padding(.bottom, 32)
             
-        } 
+        }
         .frame(maxWidth: .infinity)
         .miniGameBackground()
         
@@ -134,7 +132,7 @@ struct SRPView: View {
             }
             
             RPSMainButtonView(text: "Дальше") {
-                stage1ViewModel.setState(.game4)
+                completion()
             }.padding(.bottom, 52)
         }
         .padding(.bottom, 52)

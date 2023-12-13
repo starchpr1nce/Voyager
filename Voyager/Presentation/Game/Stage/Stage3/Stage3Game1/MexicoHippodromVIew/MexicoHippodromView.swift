@@ -4,6 +4,7 @@ import SwiftUI
 struct MexicoHippodromView: View {
     
     @EnvironmentObject var mexicoHippodtromViewModel: MexicoHippodromViewModel
+    var completion: () -> Void = {}
     
     var body: some View {
         VStack {
@@ -24,12 +25,7 @@ struct MexicoHippodromView: View {
         Spacer()
         VStack {
             Text("Кто твой фаворит  сегодня: ")
-                .foregroundColor(.white)
-                .font(.headline)
-                .padding()
-                .frame(maxWidth: 280)
-                .background(Color.mint.opacity(1))
-                .border(Color.black, width: 2)
+                .gameButtonStyle(.textBack)
             
             ForEach(0..<4) { index in
                 chooseHorseButtonView(index)
@@ -60,12 +56,7 @@ struct MexicoHippodromView: View {
             mexicoHippodtromViewModel.setChooseSizeOfBet()
         }, label: {
             Text("\(mexicoHippodtromViewModel.horsesNames[index]) (\(mexicoHippodtromViewModel.horsesRate[index], specifier: "%.1f"))")
-                .foregroundColor(.white)
-                .font(.headline)
-                .padding()
-                .frame(maxWidth: 280)
-                .background(Color.orange.opacity(1))
-                .border(Color.black, width: 2)
+                .gameButtonStyle(.nextButton)
         })
     }
     
@@ -76,12 +67,7 @@ struct MexicoHippodromView: View {
             Spacer()
             
             Text("Рзамер ставки: ")
-                .foregroundColor(.white)
-                .font(.headline)
-                .padding()
-                .frame(maxWidth: 280)
-                .background(Color.mint.opacity(1))
-                .border(Color.black, width: 2)
+                .gameButtonStyle(.textBack)
             
             ForEach(0..<4) { index in
                 chooseSizeOfBetButtonView(index)
@@ -89,18 +75,19 @@ struct MexicoHippodromView: View {
             
         } .padding(.bottom, 2)
         .frame(maxWidth: .infinity)
-                .background {
-                            ZStack {
-                                VStack(spacing: 0) {
-                                    Spacer()
-                                    Rectangle()
-                                        .frame(height: 5)
-                                    Rectangle()
-                                        .foregroundStyle(Color(red: 0.13, green: 0.14, blue: 0.19))
-                                        .frame(height: UIScreen.main.bounds.height * 0.5)
-                                }
-                            }.ignoresSafeArea()
-                        }
+        .miniGameBackground()
+//                .background {
+//                            ZStack {
+//                                VStack(spacing: 0) {
+//                                    Spacer()
+//                                    Rectangle()
+//                                        .frame(height: 5)
+//                                    Rectangle()
+//                                        .foregroundStyle(Color(red: 0.13, green: 0.14, blue: 0.19))
+//                                        .frame(height: UIScreen.main.bounds.height * 0.5)
+//                                }
+//                            }.ignoresSafeArea()
+//                        }
                 
         
         
@@ -112,12 +99,7 @@ struct MexicoHippodromView: View {
             mexicoHippodtromViewModel.setAnimation()
         }, label: {
             Text("\(mexicoHippodtromViewModel.sizeOfBet[index])")
-                .foregroundColor(.white)
-                .font(.headline)
-                .padding()
-                .frame(maxWidth: 280)
-                .background(Color.orange.opacity(1))
-                .border(Color.black, width: 2)
+                .gameButtonStyle(.nextButton)
         })
     }
     
@@ -162,50 +144,24 @@ struct MexicoHippodromView: View {
           Spacer()
             
             Text(isWin ? "С победой, хлопец" : "Деньги это лишь грязные зеленые бумажки избавляясь от них ты очищаешь свою душу, а я благородно забираю твой грех на себя. Можешь не благодарить")
-                .foregroundColor(.white)
-                .font(.headline)
-                .padding()
-                .frame(maxWidth: 280)
-                .background(Color.mint.opacity(1))
-                .border(Color.black, width: 2)
+                .gameButtonStyle(.textBack)
             
             Button {
-                
+                mexicoHippodtromViewModel.resetGame()
             } label: {
                 Text("Ещё разок?")
-                    .foregroundColor(.white)
-                    .font(.headline)
-                    .padding()
-                    .frame(maxWidth: 280)
-                    .background(Color.orange.opacity(1))
-                    .border(Color.black, width: 2)
+                    .gameButtonStyle(.nextButton)
             }
             
             Button {
-                
+                completion()
             } label: {
                 Text("Дальше")
-                    .foregroundColor(.white)
-                    .font(.headline)
-                    .padding()
-                    .frame(maxWidth: 280)
-                    .background(Color.orange.opacity(1))
-                    .border(Color.black, width: 2)
+                    .gameButtonStyle(.nextButton)
             } .padding(.bottom, 52)
             
         } .frame(maxWidth: .infinity)
-            .background {
-                        ZStack {
-                            VStack(spacing: 0) {
-                                Spacer()
-                                Rectangle()
-                                    .frame(height: 5)
-                                Rectangle()
-                                    .foregroundStyle(Color(red: 0.13, green: 0.14, blue: 0.19))
-                                    .frame(height: UIScreen.main.bounds.height * 0.5)
-                            }
-                        }.ignoresSafeArea()
-                    }
+            .miniGameBackground()
         
     }
     

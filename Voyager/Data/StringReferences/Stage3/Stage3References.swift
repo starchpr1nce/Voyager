@@ -158,7 +158,7 @@ struct Stage3BetComplicatedReference: PhraseDelegate {
     
     private let text1 = PhraseData(
         text: "- Вот те на. Ты откуда явился здесь?",
-        type: .investMan
+        type: .sportsman
     )
     
     private let text2 = PhraseData(
@@ -168,7 +168,7 @@ struct Stage3BetComplicatedReference: PhraseDelegate {
     
     private let text3 = PhraseData(
         text: "- А по-моему ты за мною таскаешься, аферист. Ты всё хочешь что ли в торговлю инсайдами? И решил стать настырным? Иди вон покажи себя сперва на ставках, где нужно подробно указывать счёт за игру. Это тебе не просто победа или поражение, тут нужно уметь владеть сведениями из открытых источников. Всю инфу ты либо отыщешь самостоятельно, либо, значит, это всё просто не для тебя. Там и выигрыши побольше.",
-        type: .investMan
+        type: .sportsman
     )
     
     private let text4 = PhraseData(
@@ -178,7 +178,7 @@ struct Stage3BetComplicatedReference: PhraseDelegate {
     
     private let text5 = PhraseData(
         text: "- Сколько потребуется. Так а если ты сам выигрываешь, для чего тебе все эти мутки вокруг футбола? Того и гляди, начнёшь сам поднимать, так откроешь капперское бюро, э-хе-хе…",
-        type: .investMan
+        type: .sportsman
     )
     
     private let text6 = PhraseData(

@@ -86,11 +86,13 @@ struct Stage2Game1View: View {
             case .text19:
                 stageView {
                     stage2Game1ViewModel.nextText(.game)
-                    print(stage2Game1ViewModel.state)
-//                    stage2ViewModel.setState(.game2)
                 }
             case .game:
-                WheelView().environmentObject(WheelViewModel())
+                WheelView() {
+                    
+                        stage2ViewModel.setState(.game2)
+                }
+                    .environmentObject(WheelViewModel())
             }
         }
         .onAppear {

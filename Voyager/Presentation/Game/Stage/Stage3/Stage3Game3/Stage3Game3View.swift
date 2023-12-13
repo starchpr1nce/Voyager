@@ -7,9 +7,10 @@
 
 import SwiftUI
 
+import SwiftUI
+
 struct Stage3Game3View: View {
     @EnvironmentObject var stage3ViewModel: Stage3ViewModel
-    @EnvironmentObject var appRouter: NavRouter<AppRouteState>
     @StateObject var stage3Game3ViewModel = Stage3Game3ViewModel()
     var body: some View {
         ZStack {
@@ -47,8 +48,9 @@ struct Stage3Game3View: View {
                     stage3Game3ViewModel.nextText(.game)
                 }
             case .game:
-                
-                    UpdetedSportBettingView().environmentObject(UpdetedSportBettingViewModel())
+                UpdetedSportBettingView() {
+                    stage3ViewModel.setState(.game4)
+                }.environmentObject(UpdetedSportBettingViewModel())
             }
             
         }
@@ -74,7 +76,6 @@ struct Stage3Game3View: View {
             
             Button(action: {
                 nextState()
-                //                stage1ViewModel.setState(.game1)
             }, label: {
                 Text("Дальше")
                     .gameButtonStyle(.nextButton)

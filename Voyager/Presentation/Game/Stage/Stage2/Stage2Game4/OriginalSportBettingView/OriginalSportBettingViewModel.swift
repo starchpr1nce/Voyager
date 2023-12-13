@@ -17,6 +17,12 @@ final class OriginalSportBettingViewModel: ObservableObject {
     
     var sizeBet = [100, 200, 300]
     
+    func resetGame() {
+        self.playerRate = 0.0
+        self.playerBetSize = 0
+        self._gameStatus = .chooseTeam
+    }
+    
     func setChooseTeam() {
         _gameStatus = .chooseTeam
     }

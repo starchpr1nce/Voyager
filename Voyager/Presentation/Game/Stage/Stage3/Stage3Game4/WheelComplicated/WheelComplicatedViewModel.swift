@@ -10,7 +10,7 @@ import SwiftUI
 
 final class WheelComplicatedViewModel: ObservableObject {
     
-    @Published private(set) var sceneState: WheelComplicatedSceneState = .setup
+    @Published private(set) var sceneState: WheelComplicatedSceneState = .betState
     
     // MARK: - game scene values
     @Published var timeRemaining: TimeInterval = 10
@@ -18,12 +18,78 @@ final class WheelComplicatedViewModel: ObservableObject {
     @Published var ballAngle = 0.0
     let wheelSector = 360.0 / 37.0
     
-    func setGameScene() {
-        sceneState = .game
+    func resetGame() {
+        wheelAngle = 0.0
+        ballAngle = 0.0
+        colorSelect = nil
+        numSelect = nil
+        selectType = .byBoth
+        amount = 0
+        sceneState = .betState
     }
     
-    func setResultScene() {
+    func setSetupTypeState() {
+        sceneState = .setupTypeState
+    }
+    
+    func setByColorState() {
+        sceneState = .byColorState
+    }
+    
+    func setByNumState() {
+        sceneState = .byNumState
+    }
+    
+    func setByBothState() {
+        sceneState = .byBothState
+    }
+    
+    func setGameScene(selectType: RWCSetupType, color: RWCColor? = nil, num: Int? = nil) {
+        self.selectType = selectType
+        self.colorSelect = color
+        self.numSelect = num
+        self.sceneState = .game
+    }
+    
+    func setResultScene(_ res: Int) {
+        resultAmount = res
         sceneState = .result
+    }
+    
+    
+    // MARK: - setup scene values
+    
+    @Published var colorSelect: RWCColor? = nil
+    @Published var numSelect: Int? = nil
+    @Published var selectType: RWCSetupType = .byBoth
+    @Published var amount: Int = 0
+    
+    // MARK: - result scene values
+    
+    @Published var resultAmount = 0
+    @Published var resultGameRWCData = RWCData(color: .green, num: 0, sector: .init(start: 0.0, end: 0.0))
+    
+    func calculateGameResult(amount: Int, selectType: RWCSetupType, result: RWCData, colorSelect: RWCColor? = nil, numSelect: Int? = nil) -> Int {
+        switch selectType {
+        case .byColor:
+            if result.color == colorSelect ?? .green {
+                return amount * 2
+            } else {
+                return -amount
+            }
+        case .byNum:
+            if result.num == numSelect ?? 0 {
+                return amount * 5
+            } else {
+                return -amount
+            }
+        case .byBoth:
+            if result.num == numSelect ?? 0 && result.color == colorSelect ?? .green {
+                return amount * 10
+            } else {
+                return -amount
+            }
+        }
     }
     
     var wheelData: [RWCData] {
@@ -91,7 +157,11 @@ final class WheelComplicatedViewModel: ObservableObject {
     }
     
     enum WheelComplicatedSceneState: CaseIterable {
-        case setup
+        case betState
+        case setupTypeState
+        case byColorState
+        case byNumState
+        case byBothState
         case game
         case result
     }
@@ -99,6 +169,17 @@ final class WheelComplicatedViewModel: ObservableObject {
 
 enum RWCColor: String, CaseIterable {
     case red, black, green
+    
+    var colorName: String {
+        switch self {
+        case .red:
+            return "Красный"
+        case .black:
+            return "Черный"
+        case .green:
+            return "Зеленый"
+        }
+    }
 }
 
 enum RWCSetupType: String, CaseIterable {

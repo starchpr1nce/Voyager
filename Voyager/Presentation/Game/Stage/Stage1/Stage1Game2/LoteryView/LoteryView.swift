@@ -7,7 +7,7 @@ struct LoteryView: View {
     @EnvironmentObject var loteryViewModel: LoteryViewModel
     @EnvironmentObject var stage1ViewModel: Stage1ViewModel
     
-    
+    var completion = {}
 
     var body: some View {
         VStack {
@@ -20,7 +20,7 @@ struct LoteryView: View {
                 case .result:
                     resultView()
                 }
-            } 
+            }
             .padding(.bottom, 32)
         }
     }
@@ -102,7 +102,7 @@ struct LoteryView: View {
                 .gameButtonStyle(.textBack)
            
             Button(action: {
-                stage1ViewModel.setState(.game3)
+                completion()
             }, label: {
                 Text("Дальше")
                     .gameButtonStyle(.nextButton)
@@ -119,10 +119,3 @@ struct LoteryView: View {
         .miniGameBackground()
     }
 }
-
-
-
-//#Preview {
-//    LoteryView()
-//        .environmentObject(LoteryViewModel())
-//}

@@ -12,6 +12,17 @@ final class WheelViewModel: ObservableObject {
     
     @Published private(set) var sceneState: WheelSceneState = .betState
     
+    func resetGame() {
+        self.angle = 0
+        self.colorSelect = nil
+        self.numSelect = nil
+        self.selectType = .byBoth
+        self.amount = 0
+        self.resultAmount = 0
+        self.resultGameRWData = RWData(color: .green, num: 0, sector: .init(start: 0.0, end: 0.0))
+        self.sceneState = .betState
+    }
+    
     func setSetupTypeState() {
         sceneState = .setupTypeState
     }
@@ -35,7 +46,8 @@ final class WheelViewModel: ObservableObject {
         self.sceneState = .game
     }
     
-    func setResultScene() {
+    func setResultScene(_ res: Int) {
+        resultAmount = res
         sceneState = .result
     }
     
@@ -52,6 +64,32 @@ final class WheelViewModel: ObservableObject {
     @Published var amount: Int = 0
     
     // MARK: - result scene values
+    
+    @Published var resultAmount = 0
+    @Published var resultGameRWData = RWData(color: .green, num: 0, sector: .init(start: 0.0, end: 0.0))
+    
+    func calculateGameResult(amount: Int, selectType: RWSetupType, result: RWData, colorSelect: RWColor? = nil, numSelect: Int? = nil) -> Int {
+        switch selectType {
+        case .byColor:
+            if result.color == colorSelect ?? .green {
+                return amount * 2
+            } else {
+                return -amount
+            }
+        case .byNum:
+            if result.num == numSelect ?? 0 {
+                return amount * 5
+            } else {
+                return -amount
+            }
+        case .byBoth:
+            if result.num == numSelect ?? 0 && result.color == colorSelect ?? .green {
+                return amount * 10
+            } else {
+                return -amount
+            }
+        }
+    }
     
     var wheelData: [RWData] {
         return [
@@ -128,6 +166,17 @@ final class WheelViewModel: ObservableObject {
 
 enum RWColor: String, CaseIterable {
     case red, black, green
+    
+    var colorName: String {
+        switch self {
+        case .red:
+            return "Красный"
+        case .black:
+            return "Черный"
+        case .green:
+            return "Зеленый"
+        }
+    }
 }
 
 enum RWSetupType: String, CaseIterable {

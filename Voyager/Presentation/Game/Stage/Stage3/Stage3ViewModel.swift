@@ -26,6 +26,7 @@ final class Stage3ViewModel: ObservableObject {
             self.stageState = StorageManager.shared.stage3State
         }
     }
+    
     func setBackImages(background: String, character: String) {
         self.background = background
         self.character = character

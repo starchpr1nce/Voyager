@@ -39,15 +39,16 @@ struct Stage4Game1View: View {
                 }
             case .text6:
                 stageViewWithAnswers {
-                    stage4ViewModel.setState(.game2)
+                    stage4Game1ViewModel.nextText(.game)
                 } negativeAction: {
-                    stage4ViewModel.setState(.game2)
+                    stage4Game1ViewModel.nextText(.game)
                 }
 
             case .game:
-                stageView {
-                    stage4ViewModel.setState(.preview)
+                LoteryView() {
+                    stage4ViewModel.setState(.game2)
                 }
+                .environmentObject(LoteryViewModel())
             }
             
         }
