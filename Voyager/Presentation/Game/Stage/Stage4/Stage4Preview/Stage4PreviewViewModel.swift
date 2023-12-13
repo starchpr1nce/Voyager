@@ -24,6 +24,9 @@ final class Stage4PreviewViewModel: ObservableObject {
             index += 1
             textOutput = ""
             phraseSource = Stage4PreviewReference.shared.phrases[index]
+        } else {
+            textOutput = ""
+            self.state = state
         }
     }
 }

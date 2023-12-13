@@ -5,6 +5,7 @@ struct Stage1Game4View: View {
     @EnvironmentObject var stage1ViewModel: Stage1ViewModel
     @EnvironmentObject var appRouter: NavRouter<AppRouteState>
     @StateObject var stage1Game4ViewModel = Stage1Game4ViewModel()
+    @EnvironmentObject var currentStageState: NavRouter<CurrentStageState>
     
     var body: some View {
         ZStack {
@@ -34,9 +35,13 @@ struct Stage1Game4View: View {
                     stage1Game4ViewModel.nextText(.game)
                 }
             case .game:
-                stageView {
-                    
+                BetWithStrangerView(winChance: 0.5) {
+                    currentStageState.push(route: .stage2)
+                    StorageManager.shared.setCurrentStage(.stage2)
                 }
+//                stageView {
+
+//                }
             }
         }
         .onAppear {

@@ -24,16 +24,28 @@ struct GameButtonModifier: ViewModifier {
 struct GameTextModifier: ViewModifier {
     var backgroundColor: Color
     var width: CGFloat
+    var fixedHeight: Bool
 
     func body(content: Content) -> some View {
-        content
-            .padding(12)
-            .foregroundStyle(.white)
-            .font(.system(size: 14).monospaced().weight(.bold))
-            .frame(minHeight: 160)
-            .frame(width: width, alignment: .topLeading)
-            .multilineTextAlignment(.leading)
-            .background(backgroundColor)
-            .border(Color.black, width: 2)
+        if fixedHeight {
+            content
+                .padding(12)
+                .foregroundStyle(.white)
+                .font(.system(size: 14).monospaced().weight(.bold))
+                .frame(minHeight: 160)
+                .frame(width: width, alignment: .topLeading)
+                .multilineTextAlignment(.leading)
+                .background(backgroundColor)
+                .border(Color.black, width: 2)
+        } else {
+            content
+                .padding(12)
+                .foregroundStyle(.white)
+                .font(.system(size: 14).monospaced().weight(.bold))
+                .frame(width: width, alignment: .topLeading)
+                .multilineTextAlignment(.leading)
+                .background(backgroundColor)
+                .border(Color.black, width: 2)
+        }
     }
 }

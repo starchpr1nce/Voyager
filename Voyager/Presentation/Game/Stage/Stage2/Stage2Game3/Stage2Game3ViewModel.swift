@@ -21,6 +21,9 @@ final class Stage2Game3ViewModel: ObservableObject {
             index += 1
             textOutput = ""
             phraseSource = Stage2ThimblesComplicatedReference.shared.phrases[index]
+        } else {
+            textOutput = ""
+            self.state = state
         }
     }
 }

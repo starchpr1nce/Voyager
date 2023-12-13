@@ -20,6 +20,9 @@ final class Stage5Game2ViewModel:  ObservableObject {
             index += 1
             textOutput = ""
             phraseSource = Stage5CryptoReference.shared.phrases[index]
+        } else {
+            textOutput = ""
+            self.state = state
         }
     }
 }

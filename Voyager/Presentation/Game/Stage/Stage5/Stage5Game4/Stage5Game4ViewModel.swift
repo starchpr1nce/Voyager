@@ -20,6 +20,9 @@ final class Stage5Game4ViewModel: ObservableObject {
             index += 1
             textOutput = ""
             phraseSource = Stage5StocksReference.shared.phrases[index]
+        } else {
+            textOutput = ""
+            self.state = state
         }
     }
     

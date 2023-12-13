@@ -131,25 +131,26 @@ struct ShellGameView: View {
             viewModel.setUpCups(reveal: $reveal)
         }
         .frame(maxWidth: .infinity)
-        .background {
-            ZStack {
-                VStack(spacing: 0) {
-                    Spacer()
-                    Rectangle()
-                        .fill(.black)
-                        .frame(height: 5)
-                    Rectangle()
-                        .foregroundStyle(Color(red: 0.13, green: 0.14, blue: 0.19))
-                        .frame(height: UIScreen.main.bounds.height * 0.5)
-                }
-            }.ignoresSafeArea()
-        }
+        .miniGameBackground()
+//        .background {
+//            ZStack {
+//                VStack(spacing: 0) {
+//                    Spacer()
+//                    Rectangle()
+//                        .fill(.black)
+//                        .frame(height: 5)
+//                    Rectangle()
+//                        .foregroundStyle(Color(red: 0.13, green: 0.14, blue: 0.19))
+//                        .frame(height: UIScreen.main.bounds.height * 0.5)
+//                }
+//            }.ignoresSafeArea()
+//        }
     }
 }
 
-#Preview {
-    ShellGameView(completion: {
-        //        stage1ViewModel.setState(.game2)
-    })
-    .environmentObject(ShellGameViewModel(cupsCount: 3, winChance: 0.3))
-}
+//#Preview {
+//    ShellGameView(completion: {
+//        //        stage1ViewModel.setState(.game2)
+//    })
+//    .environmentObject(ShellGameViewModel(cupsCount: 3, winChance: 0.3))
+//}

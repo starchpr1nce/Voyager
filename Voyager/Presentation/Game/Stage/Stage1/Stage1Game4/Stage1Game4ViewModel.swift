@@ -23,7 +23,7 @@ final class Stage1Game4ViewModel: ObservableObject {
             phraseSource = Stage1StrangerArgumentReference.shared.phrases[index]
         } else {
             textOutput = ""
-            self.state = .game
+            self.state = state
         }
     }
     

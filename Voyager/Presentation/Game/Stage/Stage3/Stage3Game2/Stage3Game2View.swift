@@ -31,8 +31,8 @@ struct Stage3Game2View: View {
                 }
             case .text4:
                 stageView {
-//                    stage3Game2ViewModel.nextText(.game)
-                    stage3ViewModel.setState(.game3)
+                    stage3Game2ViewModel.nextText(.game)
+//                    stage3ViewModel.setState(.game3)
                 }
             case .game:
                 stageView {

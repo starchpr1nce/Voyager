@@ -10,10 +10,29 @@ import SwiftUI
 
 final class WheelViewModel: ObservableObject {
     
-    @Published private(set) var sceneState: WheelSceneState = .setup
+    @Published private(set) var sceneState: WheelSceneState = .betState
     
-    func setGameScene() {
-        sceneState = .game
+    func setSetupTypeState() {
+        sceneState = .setupTypeState
+    }
+    
+    func setByColorState() {
+        sceneState = .byColorState
+    }
+    
+    func setByNumState() {
+        sceneState = .byNumState
+    }
+    
+    func setByBothState() {
+        sceneState = .byBothState
+    }
+    
+    func setGameScene(selectType: RWSetupType, color: RWColor? = nil, num: Int? = nil) {
+        self.selectType = selectType
+        self.colorSelect = color
+        self.numSelect = num
+        self.sceneState = .game
     }
     
     func setResultScene() {
@@ -88,19 +107,23 @@ final class WheelViewModel: ObservableObject {
         let num: Int
         let sector: RWSector
     }
-
+    
     struct RWSector {
         let start: Double
         let end: Double
     }
-
-
+    
+    
     enum WheelSceneState: CaseIterable {
-        case setup
+        case betState
+        case setupTypeState
+        case byColorState
+        case byNumState
+        case byBothState
         case game
         case result
     }
-
+    
 }
 
 enum RWColor: String, CaseIterable {
