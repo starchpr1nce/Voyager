@@ -4,6 +4,7 @@
 //
 //  Created by admin on 23.11.2023.
 //
+//MARK: - Upd
 
 import SwiftUI
 
@@ -14,6 +15,24 @@ final class StorageManager {
     //MARK: - onboarding
     
     @AppStorage(SMKeys.ONBOARDING_PRESENTED) private(set) var onboardingPresented = false
+    
+    @AppStorage(SMKeys.GAME_TEXT_SIZE) private(set) var textSize = 14
+    
+    func textSizeDown() {
+        textSize -= 1
+    }
+    
+    func textSizeUp() {
+        textSize += 1
+    }
+    
+    @AppStorage(SMKeys.GAME_TEXT_SPEED) private(set) var textSpeed  = 1_000_000
+    func textSpeedDown() {
+        textSpeed -= 200_000
+    }
+    func textSpeedUp() {
+        textSpeed += 200_000
+    }
     
     func toggleOnboarding() {
         onboardingPresented.toggle()

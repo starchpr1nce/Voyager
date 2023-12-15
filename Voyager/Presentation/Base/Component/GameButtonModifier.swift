@@ -4,6 +4,7 @@
 //
 //  Created by admin on 11.12.2023.
 //
+//MARK: - Upd
 import SwiftUI
 
 struct GameButtonModifier: ViewModifier {
@@ -31,7 +32,8 @@ struct GameTextModifier: ViewModifier {
             content
                 .padding(12)
                 .foregroundStyle(.white)
-                .font(.system(size: 14).monospaced().weight(.bold))
+//                .font(.system(size: 14).monospaced().weight(.bold))
+                .font(.system(size: CGFloat(StorageManager.shared.textSize)).monospaced().weight(.bold))
                 .frame(minHeight: 160)
                 .frame(width: width, alignment: .topLeading)
                 .multilineTextAlignment(.leading)
@@ -41,7 +43,8 @@ struct GameTextModifier: ViewModifier {
             content
                 .padding(12)
                 .foregroundStyle(.white)
-                .font(.system(size: 14).monospaced().weight(.bold))
+//                .font(.system(size: 14).monospaced().weight(.bold))
+                .font(.system(size:  CGFloat(StorageManager.shared.textSize)).monospaced().weight(.bold))
                 .frame(width: width, alignment: .topLeading)
                 .multilineTextAlignment(.leading)
                 .background(backgroundColor)

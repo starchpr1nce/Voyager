@@ -45,6 +45,10 @@
 		8413DFCA2B0FAE2B009AE42F /* Stage1View.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8413DFC92B0FAE2B009AE42F /* Stage1View.swift */; };
 		8413DFCC2B0FAE60009AE42F /* Stage1ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8413DFCB2B0FAE60009AE42F /* Stage1ViewModel.swift */; };
 		8413DFCF2B0FAF96009AE42F /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8413DFCE2B0FAF96009AE42F /* Router.swift */; };
+		8437EFF52B2B2FAA004125A1 /* PolicyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8437EFF42B2B2FAA004125A1 /* PolicyView.swift */; };
+		8437EFFA2B2B83B3004125A1 /* TextSpeedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8437EFF92B2B83B3004125A1 /* TextSpeedView.swift */; };
+		8437EFFC2B2B8789004125A1 /* TextSizeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8437EFFB2B2B8789004125A1 /* TextSizeView.swift */; };
+		8437F0002B2B8C89004125A1 /* AboutUsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8437EFFF2B2B8C89004125A1 /* AboutUsView.swift */; };
 		844827622B29E8FF004EF5F7 /* WheelComplicatedBetStateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 844827612B29E8FF004EF5F7 /* WheelComplicatedBetStateView.swift */; };
 		844827642B29E916004EF5F7 /* WheelComplicatedSetupTypeStateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 844827632B29E916004EF5F7 /* WheelComplicatedSetupTypeStateView.swift */; };
 		844827662B29E925004EF5F7 /* WheelComplicatedByColorStateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 844827652B29E925004EF5F7 /* WheelComplicatedByColorStateView.swift */; };
@@ -195,6 +199,10 @@
 		8413DFC92B0FAE2B009AE42F /* Stage1View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Stage1View.swift; sourceTree = "<group>"; };
 		8413DFCB2B0FAE60009AE42F /* Stage1ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Stage1ViewModel.swift; sourceTree = "<group>"; };
 		8413DFCE2B0FAF96009AE42F /* Router.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Router.swift; sourceTree = "<group>"; };
+		8437EFF42B2B2FAA004125A1 /* PolicyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PolicyView.swift; sourceTree = "<group>"; };
+		8437EFF92B2B83B3004125A1 /* TextSpeedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextSpeedView.swift; sourceTree = "<group>"; };
+		8437EFFB2B2B8789004125A1 /* TextSizeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextSizeView.swift; sourceTree = "<group>"; };
+		8437EFFF2B2B8C89004125A1 /* AboutUsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutUsView.swift; sourceTree = "<group>"; };
 		844827612B29E8FF004EF5F7 /* WheelComplicatedBetStateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WheelComplicatedBetStateView.swift; sourceTree = "<group>"; };
 		844827632B29E916004EF5F7 /* WheelComplicatedSetupTypeStateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WheelComplicatedSetupTypeStateView.swift; sourceTree = "<group>"; };
 		844827652B29E925004EF5F7 /* WheelComplicatedByColorStateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WheelComplicatedByColorStateView.swift; sourceTree = "<group>"; };
@@ -527,6 +535,56 @@
 				8413DFCB2B0FAE60009AE42F /* Stage1ViewModel.swift */,
 			);
 			path = Stage1;
+			sourceTree = "<group>";
+		};
+		8437EFF32B2B2F8E004125A1 /* PolicyView */ = {
+			isa = PBXGroup;
+			children = (
+				8437EFF42B2B2FAA004125A1 /* PolicyView.swift */,
+			);
+			path = PolicyView;
+			sourceTree = "<group>";
+		};
+		8437EFF62B2B836F004125A1 /* SettingsViews */ = {
+			isa = PBXGroup;
+			children = (
+				8437EFF82B2B8390004125A1 /* TextSizeView */,
+				8437EFF72B2B8386004125A1 /* TextSpeedView */,
+			);
+			path = SettingsViews;
+			sourceTree = "<group>";
+		};
+		8437EFF72B2B8386004125A1 /* TextSpeedView */ = {
+			isa = PBXGroup;
+			children = (
+				8437EFF92B2B83B3004125A1 /* TextSpeedView.swift */,
+			);
+			path = TextSpeedView;
+			sourceTree = "<group>";
+		};
+		8437EFF82B2B8390004125A1 /* TextSizeView */ = {
+			isa = PBXGroup;
+			children = (
+				8437EFFB2B2B8789004125A1 /* TextSizeView.swift */,
+			);
+			path = TextSizeView;
+			sourceTree = "<group>";
+		};
+		8437EFFD2B2B8A6B004125A1 /* InfoViews */ = {
+			isa = PBXGroup;
+			children = (
+				8437EFFE2B2B8C79004125A1 /* AboutUs */,
+				8437EFF32B2B2F8E004125A1 /* PolicyView */,
+			);
+			path = InfoViews;
+			sourceTree = "<group>";
+		};
+		8437EFFE2B2B8C79004125A1 /* AboutUs */ = {
+			isa = PBXGroup;
+			children = (
+				8437EFFF2B2B8C89004125A1 /* AboutUsView.swift */,
+			);
+			path = AboutUs;
 			sourceTree = "<group>";
 		};
 		844827602B29E88A004EF5F7 /* Subview */ = {
@@ -997,6 +1055,7 @@
 		84BF51ED2B0B6F0C00CC2D9F /* SettingsView */ = {
 			isa = PBXGroup;
 			children = (
+				8437EFF62B2B836F004125A1 /* SettingsViews */,
 				84BF51EF2B0B6F2300CC2D9F /* SettingsView.swift */,
 				84BF51F12B0B718800CC2D9F /* SettingsViewModel.swift */,
 			);
@@ -1006,6 +1065,7 @@
 		84BF51EE2B0B6F1400CC2D9F /* InfoView */ = {
 			isa = PBXGroup;
 			children = (
+				8437EFFD2B2B8A6B004125A1 /* InfoViews */,
 				84BF52022B0B772400CC2D9F /* InfoView.swift */,
 				84BF52042B0B772F00CC2D9F /* InfoViewModel.swift */,
 			);
@@ -1173,6 +1233,7 @@
 				84BF51F92B0B71FB00CC2D9F /* ApplicationController.swift in Sources */,
 				84A63D362B28CF6A00FCDB6F /* WheelGameStateView.swift in Sources */,
 				844827792B29EE18004EF5F7 /* Card.swift in Sources */,
+				8437EFFA2B2B83B3004125A1 /* TextSpeedView.swift in Sources */,
 				8413DFCF2B0FAF96009AE42F /* Router.swift in Sources */,
 				84A63D2C2B28CF3900FCDB6F /* WheelBetStateView.swift in Sources */,
 				8448276A2B29E940004EF5F7 /* WheelComplicatedByBothStateView.swift in Sources */,
@@ -1237,6 +1298,7 @@
 				844D157F2B1A2B4A00896576 /* Stage2Game3ViewModel.swift in Sources */,
 				844827782B29EE18004EF5F7 /* TwentyOneViewModel.swift in Sources */,
 				84A63D322B28CF5700FCDB6F /* WheelByNumStateView.swift in Sources */,
+				8437EFF52B2B2FAA004125A1 /* PolicyView.swift in Sources */,
 				84A63D302B28CF4E00FCDB6F /* WheelByColorStateView.swift in Sources */,
 				84A63D382B28CF7800FCDB6F /* WheelResultStateView.swift in Sources */,
 				848AFC092B2090920071D4AE /* OriginalSportBettingView.swift in Sources */,
@@ -1272,9 +1334,11 @@
 				840DE7422B272D0500C44540 /* MexicoHippodromViewModel.swift in Sources */,
 				844D15792B1A2B2F00896576 /* Stage2Game2View.swift in Sources */,
 				84741E722B14EB9A000B8C59 /* Stage2ViewModel.swift in Sources */,
+				8437F0002B2B8C89004125A1 /* AboutUsView.swift in Sources */,
 				84BF51F22B0B718800CC2D9F /* SettingsViewModel.swift in Sources */,
 				84741E7C2B14EBE8000B8C59 /* Stage5View.swift in Sources */,
 				844D157D2B1A2B4300896576 /* Stage2Game3View.swift in Sources */,
+				8437EFFC2B2B8789004125A1 /* TextSizeView.swift in Sources */,
 				844D15712B1A2AFD00896576 /* Stage2PreviewView.swift in Sources */,
 				84AC0D922B1F2ED6004FA735 /* Stage3Game2ViewModel.swift in Sources */,
 				840DE74D2B2732A500C44540 /* DiceView.swift in Sources */,

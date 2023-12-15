@@ -6,6 +6,7 @@
 //
 
 import Foundation
+//MARK: - Upd
 
 struct SMKeys {
     
@@ -27,4 +28,8 @@ struct SMKeys {
     static let GAME_HEALTH = "gameHealth"
     
     static let GAME_CASH = "gameCash"
+    
+    static let GAME_TEXT_SIZE = "gameTextSize"
+    
+    static let GAME_TEXT_SPEED = "gameTextSpeed"
 }

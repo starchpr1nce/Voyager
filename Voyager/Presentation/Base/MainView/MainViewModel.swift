@@ -14,4 +14,19 @@ final class MainViewModel: ObservableObject {
     init(appController: ApplicationController) {
         self.appController = appController
     }
+    
+    //MARK: - Upd
+    @Published private(set) var _gameStatus: GameStatus = .newGame
+    
+    func setNewGame() {
+        _gameStatus = .newGame
+    }
+    func setContGame() {
+        _gameStatus = .continueGame
+    }
+    
+    enum GameStatus {
+        case newGame, continueGame
+    }
+    
 }
