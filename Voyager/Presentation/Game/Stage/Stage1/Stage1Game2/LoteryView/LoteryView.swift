@@ -7,6 +7,10 @@ struct LoteryView: View {
     @EnvironmentObject var loteryViewModel: LoteryViewModel
     @EnvironmentObject var stage1ViewModel: Stage1ViewModel
     
+
+    
+    
+    
     var completion = {}
 
     var body: some View {
@@ -41,7 +45,8 @@ struct LoteryView: View {
                     )
             }  else if loteryViewModel.secondStep {
                 
-                Image(loteryViewModel.winChanse[0] < 6 ? "ticketSemiLose" : "ticketSemiWin")
+//                Image(loteryViewModel.winChanse[0] < 6 ? "ticketSemiLose" : "ticketSemiWin")
+                Image(loteryViewModel.isWin ? "ticketSemiLose" : "ticketSemiWin")
                     .gesture(
                         DragGesture()
                             .onChanged { _ in
@@ -54,7 +59,7 @@ struct LoteryView: View {
                     )
                 
             } else if  loteryViewModel.thirdStep {
-                Image(loteryViewModel.winChanse[0] < 6 ? "ticketLose" : "ticketWin")
+                Image(loteryViewModel.isWin ? "ticketLose" : "ticketWin")
                     .onAppear {
                         DispatchQueue.main.asyncAfter(deadline: .now() + 1.5) {
                             loteryViewModel.setResult()
@@ -97,8 +102,9 @@ struct LoteryView: View {
     
     @ViewBuilder private func resultView() -> some View {
         
+        
         VStack {
-            Text(loteryViewModel.winChanse[0] < 6 ?  "В следующий раз повезет" : "Повезло - повезлоо!")
+            Text(loteryViewModel.isWin ?  "В следующий раз повезет" : "Повезло - повезлоо!")
                 .gameButtonStyle(.textBack)
            
             Button(action: {
@@ -119,3 +125,9 @@ struct LoteryView: View {
         .miniGameBackground()
     }
 }
+
+//#Preview {
+//    LoteryView()
+//        .environmentObject(LoteryViewModel())
+//}
+

@@ -33,6 +33,7 @@ final class UpdetedSportBettingViewModel: ObservableObject {
     
     func determineWin() -> Bool {
        let winChance: Double
+        let karmaBonus: Double
        
        switch playerRate {
        case 3.6:
@@ -56,9 +57,57 @@ final class UpdetedSportBettingViewModel: ObservableObject {
            winChance = 0.50
        
        }
+        
+        switch StorageManager.shared.gameKarma {
+        case 0:
+            karmaBonus = -0.33
+        case 5:
+            karmaBonus = -0.30
+        case 10:
+            karmaBonus = -0.27
+        case 15:
+            karmaBonus = -0.24
+        case 20:
+            karmaBonus = -0.21
+        case 25:
+            karmaBonus = -0.18
+        case 30:
+            karmaBonus = -0.15
+        case 35:
+            karmaBonus = -0.12
+        case 40:
+            karmaBonus = -0.09
+        case 45:
+            karmaBonus = -0.03
+        case 50:
+            karmaBonus = 0
+        case 55:
+            karmaBonus = 0.03
+        case 60:
+            karmaBonus = 0.09
+        case 65:
+            karmaBonus = 0.12
+        case 70:
+            karmaBonus = 0.15
+        case 75:
+            karmaBonus = 0.18
+        case 80:
+            karmaBonus = 0.21
+        case 85:
+            karmaBonus = 0.24
+        case 90:
+            karmaBonus = 0.27
+        case 95:
+            karmaBonus = 0.30
+        case 100:
+            karmaBonus = 0.33
+            
+        default:
+            karmaBonus = 0
+        }
        
        let random = Double.random(in: 0..<1)
-       return random <= winChance
+       return random <= winChance + karmaBonus
    }
     
     enum GameStatus {

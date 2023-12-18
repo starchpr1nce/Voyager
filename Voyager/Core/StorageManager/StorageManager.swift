@@ -74,19 +74,35 @@ final class StorageManager {
         currentStageState = stage
     }
     
+//    //MARK: - karma
+//    
+//    @AppStorage(SMKeys.GAME_KARMA) private(set) var gameKarma = 50
+//    
+//    func increaseKarma(_ value: Int) {
+//        if gameKarma < 100 {
+//            gameKarma += value
+//        }
+//    }
+//    
+//    func reduceKarma(_ value: Int) {
+//        if gameKarma > 0 {
+//            gameKarma -= value
+//        }
+//    }
+    
     //MARK: - karma
     
     @AppStorage(SMKeys.GAME_KARMA) private(set) var gameKarma = 50
     
-    func increaseKarma(_ value: Int) {
+    func increaseKarma() {
         if gameKarma < 100 {
-            gameKarma += value
+            gameKarma += 5
         }
     }
     
-    func reduceKarma(_ value: Int) {
+    func reduceKarma() {
         if gameKarma > 0 {
-            gameKarma -= value
+            gameKarma -= 5
         }
     }
     

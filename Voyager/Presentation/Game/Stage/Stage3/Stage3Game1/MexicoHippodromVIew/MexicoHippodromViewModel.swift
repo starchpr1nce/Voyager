@@ -41,6 +41,7 @@ final class MexicoHippodromViewModel: ObservableObject {
     
     func determineWine() -> Bool {
         let winChance: Double
+        let karmaBonus: Double
         
         switch selectedRate {
         case 1.1:
@@ -59,8 +60,56 @@ final class MexicoHippodromViewModel: ObservableObject {
             winChance = 0.25
         }
         
+        switch StorageManager.shared.gameKarma {
+        case 0:
+            karmaBonus = -0.20
+        case 5:
+            karmaBonus = -0.18
+        case 10:
+            karmaBonus = -0.16
+        case 15:
+            karmaBonus = -0.14
+        case 20:
+            karmaBonus = -0.12
+        case 25:
+            karmaBonus = -0.10
+        case 30:
+            karmaBonus = -0.08
+        case 35:
+            karmaBonus = -0.06
+        case 40:
+            karmaBonus = -0.04
+        case 45:
+            karmaBonus = -0.02
+        case 50:
+            karmaBonus = 0
+        case 55:
+            karmaBonus = 0.02
+        case 60:
+            karmaBonus = 0.04
+        case 65:
+            karmaBonus = 0.06
+        case 70:
+            karmaBonus = 0.08
+        case 75:
+            karmaBonus = 0.10
+        case 80:
+            karmaBonus = 0.12
+        case 85:
+            karmaBonus = 0.14
+        case 90:
+            karmaBonus = 0.16
+        case 95:
+            karmaBonus = 0.18
+        case 100:
+            karmaBonus = 0.20
+            
+        default:
+            karmaBonus = 0
+        }
+        
         let random = Double.random(in: 0..<1)
-        return random <= winChance
+        return random <= winChance + karmaBonus
     }
     
     enum GameStatus {
